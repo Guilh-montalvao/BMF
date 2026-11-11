@@ -1,5 +1,5 @@
-:HL["/_next/static/chunks/2agujshbruhtq.css","style"]
+:HL["/_next/static/chunks/05cpulfnjsa-o.css","style"]
 3:[["children",{"s":"__PAGE__","h":160}]]
 2:[["children",{"s":{"n":"slug","t":"d","k":"ferramentas-oficina","s":[]},"h":96,"c":"$Q3"}]]
 1:[["children",{"s":"produto","h":96,"c":"$Q2"}]]
-0:{"b":"-dswuMJ99lVOpxX4YLLwz","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
+0:{"b":"-3pWXr9YlrJdp_X947Ab_","t":{"t":{"s":"","h":80,"c":"$Q1"}}}

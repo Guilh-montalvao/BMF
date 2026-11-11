@@ -83,11 +83,17 @@ export default function Checkout() {
     );
   return (
     <main id="conteudo" className="checkout-page">
-      <nav className="breadcrumbs">
-        <Link href="/loja/">Loja</Link>
-        <span>/</span>
-        <span>Checkout</span>
-      </nav>
+      <div className="checkout-top-nav">
+        <Link href="/loja/" className="back-link">
+          <ArrowLeft size={16} />
+          <span>Voltar para a loja</span>
+        </Link>
+        <nav className="breadcrumbs" aria-label="Caminho de navegação">
+          <Link href="/loja/">Loja</Link>
+          <span>/</span>
+          <span>Checkout</span>
+        </nav>
+      </div>
       <h1>
         Finalizar
         <br />

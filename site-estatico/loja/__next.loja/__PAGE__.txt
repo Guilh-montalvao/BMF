@@ -1,0 +1,36 @@
+1:"$Sreact.fragment"
+2:"/_next/static/chunks/0uexsizz3htf0.js"
+3:"/_next/static/chunks/3km987d161ayg.js"
+4:I[99815,["$2","$3"],"StoreProvider"]
+5:I[138,["$2","$3"],"Header"]
+6:I[39756,["$2","$3"],"default"]
+7:I[37457,["$2","$3"],"default"]
+8:"/_next/static/chunks/39zgd1xg4rrtu.js"
+9:I[45910,["$2","$3","$8"],"ButtonLink"]
+a:I[138,["$2","$3"],"Footer"]
+b:I[138,["$2","$3"],"Cart"]
+12:"$Sreact.suspense"
+13:"/_next/static/chunks/2xjrrvqgjuyax.js"
+14:I[7215,["$2","$3","$13"],"default"]
+15:I[97367,["$2","$3"],"OutletBoundary"]
+18:"ViewportBoundary"
+19:I[97367,["$2","$3"],"$18"]
+1a:"MetadataBoundary"
+1b:I[97367,["$2","$3"],"$1a"]
+1c:I[27201,["$2","$3"],"IconMark"]
+:HL["/_next/static/chunks/05cpulfnjsa-o.css","style"]
+d:X
+10:X
+10:C
+11:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$1","c",{"children":[["$","$12",null,{"fallback":["$","main",null,{"id":"conteudo","className":"store-main section-pad","children":"Preparando a loja…"}],"children":["$","$L14",null,{}]}],[["$","script","script-0",{"src":"/_next/static/chunks/2xjrrvqgjuyax.js","async":true}]],["$","$L15",null,{"children":["$","$12",null,{"name":"Next.MetadataOutlet","children":"$@16"}]}]]}],"p":"$@17","v":null,"s":"$d"}}]]
+e:[["children",{"s":"loja","h":96,"d":{"r":["$","$1","c",{"children":[null,["$","$L6",null,{"parallelRouterKey":"children","template":["$","$L7",null,{}]}]]}],"p":"$@f","v":"$10","s":"$d"},"c":"$Q11"}]]
+0:{"t":{"t":{"s":"","h":80,"d":{"r":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/05cpulfnjsa-o.css","precedence":"next"}],["$","script","script-0",{"src":"/_next/static/chunks/0uexsizz3htf0.js","async":true}],["$","script","script-1",{"src":"/_next/static/chunks/3km987d161ayg.js","async":true}]],["$","html",null,{"lang":"pt-BR","children":["$","body",null,{"children":["$","$L4",null,{"children":[["$","$L5",null,{}],["$","div",null,{"className":"site-content","children":[["$","$L6",null,{"parallelRouterKey":"children","template":["$","$L7",null,{}],"templateStyles":[],"templateScripts":null,"notFound":[["$","main",null,{"id":"conteudo","className":"checkout-page","children":["$","div",null,{"className":"checkout-confirm","children":[["$","span",null,{"className":"micro","children":"BMF / 404"}],["$","h1",null,{"className":"mt-5","children":["Página",["$","br",null,{}],["$","span",null,{"className":"blue","children":"não encontrada."}]]}],["$","p",null,{"children":"Volte para a bancada inicial ou procure seu equipamento na loja."}],["$","$L9",null,{"href":"/","children":"Voltar ao início"}],["$","$L9",null,{"href":"/loja/","className":"button-dark","children":"Explorar a loja"}]]}]}],[]]}],["$","$La",null,{}]]}],["$","$Lb",null,{}]]}]}]}]]}],"p":"$@c","v":null,"s":"$d"},"c":"$Qe"},"h":{"r":["$","$1","h",{"children":[null,["$","$L19",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L1b",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$12",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Loja de equipamentos | BMF"}],["$","meta","1",{"name":"description","content":"Bombas, motores e ferramentas no Distrito Federal. Manutenção, rebobinamento, venda de equipamentos e coleta e entrega com a BMF."}],["$","meta","2",{"name":"robots","content":"noindex, nofollow"}],["$","meta","3",{"property":"og:title","content":"BMF — Loja e oficina em Samambaia"}],["$","meta","4",{"property":"og:description","content":"Bombas, motores e ferramentas. Da escolha do equipamento à manutenção."}],["$","meta","5",{"property":"og:locale","content":"pt_BR"}],["$","meta","6",{"property":"og:image","content":"https://bmf-bombas-motores.mateusmrm.chatgpt.site/images/shop-banner.webp"}],["$","meta","7",{"property":"og:type","content":"website"}],["$","meta","8",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","9",{"name":"twitter:title","content":"BMF — Loja e oficina em Samambaia"}],["$","meta","10",{"name":"twitter:description","content":"Bombas, motores e ferramentas. Da escolha do equipamento à manutenção."}],["$","meta","11",{"name":"twitter:image","content":"https://bmf-bombas-motores.mateusmrm.chatgpt.site/images/shop-banner.webp"}],["$","link","12",{"rel":"icon","href":"/images/logo.webp"}],["$","$L1c","13",{}]]}]}],null]}],null]}],"p":"$@1d","v":null,"s":"$d"}},"a":"$@1e","u":"$@1f","b":"-3pWXr9YlrJdp_X947Ab_"}
+16:null
+d:300
+1f:true
+d:C
+1e:0
+f:"$undefined"
+c:"$undefined"
+1d:"$undefined"
+17:"$undefined"

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Check } from "@/components/glyphs";
+import Link from "next/link";
+import { Check, ArrowLeft } from "@/components/glyphs";
 import { services, whatsapp } from "@/lib/data";
 import { ButtonLink, Eyebrow, Reveal } from "@/components/ui";
 import ServiceRequest from "@/components/service-request";
@@ -7,6 +8,12 @@ export const metadata: Metadata = { title: "Oficina e manutenção" };
 export default function Page() {
   return (
     <main id="conteudo" className="services-page">
+      <div className="subpage-top-nav">
+        <Link href="/" className="back-link">
+          <ArrowLeft size={16} />
+          <span>Voltar ao início</span>
+        </Link>
+      </div>
       <section className="service-page-heading">
         <div>
           <Eyebrow>A oficina da BMF / Samambaia</Eyebrow>

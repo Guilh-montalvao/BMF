@@ -1,7 +1,8 @@
 "use client";
 import { useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "next/navigation";
-import { Search, X, Info } from "./glyphs";
+import Link from "next/link";
+import { Search, X, Info, ArrowLeft } from "./glyphs";
 import { products, Category, whatsapp } from "@/lib/data";
 import { ButtonLink, Eyebrow, ProductCard } from "./ui";
 export default function Shop() {
@@ -40,6 +41,12 @@ export default function Shop() {
   }, [category, query, sort]);
   return (
     <main id="conteudo" className="store-main">
+      <div className="shop-top-nav">
+        <Link href="/" className="back-link">
+          <ArrowLeft size={16} />
+          <span>Voltar ao início</span>
+        </Link>
+      </div>
       <section className="catalog-heading">
         <div>
           <Eyebrow>A loja da BMF</Eyebrow>

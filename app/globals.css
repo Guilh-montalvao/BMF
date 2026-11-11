@@ -236,16 +236,65 @@ small {
   top: 10px;
 }
 .breadcrumbs {
-  font: 400 10px/1.6 var(--mono);
+  font: 400 11px/1.6 var(--mono);
   display: flex;
   align-items: center;
   gap: 10px;
-  color: #778a83;
+  color: #5c7067;
   margin-bottom: 25px;
   flex-wrap: wrap;
 }
+.breadcrumbs a {
+  color: #4a5e55;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
 .breadcrumbs a:hover {
   color: var(--blue);
+}
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--navy);
+  padding: 8px 14px;
+  background: #e2ebd9;
+  border: 1px solid #bdceb7;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  width: fit-content;
+  text-decoration: none;
+}
+.back-link:hover {
+  background: var(--navy);
+  color: #ffffff;
+  border-color: var(--navy);
+  transform: translateX(-2px);
+}
+.back-link svg {
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+.back-link:hover svg {
+  transform: translateX(-2px);
+}
+.product-top-nav,
+.checkout-top-nav,
+.subpage-top-nav,
+.shop-top-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+}
+.product-top-nav .breadcrumbs,
+.checkout-top-nav .breadcrumbs {
+  margin-bottom: 0;
 }
 /* A cabinet, rather than a conventional top menu. */
 .side-rail {
@@ -1078,6 +1127,10 @@ small {
 .product-purchase > button:hover {
   background: var(--blue);
 }
+.product-purchase > button.added {
+  background: #1b7a2e !important;
+  color: white !important;
+}
 .demo-note {
   font-size: 10px;
   color: #5c7152;
@@ -1442,12 +1495,13 @@ small {
   border-bottom: 1px solid #c5d1bd;
 }
 .footer-heading img {
-  background: var(--navy);
-  padding: 10px;
+  background: transparent;
+  padding: 0;
   width: 128px;
-  height: 63px;
+  height: auto;
+  max-height: 60px;
   object-fit: contain;
-  border-radius: 3px;
+  border-radius: 0;
 }
 .footer-heading p {
   font-family: var(--display);
@@ -3075,8 +3129,11 @@ small {
     font-size: 13px;
   }
   .footer-heading img {
+    background: transparent;
+    padding: 0;
     width: 110px;
-    height: 57px;
+    height: auto;
+    max-height: 55px;
   }
   .footer-details {
     gap: 20px;
@@ -3878,8 +3935,11 @@ small {
     flex-wrap: wrap;
   }
   .footer-heading img {
+    background: transparent;
+    padding: 0;
     width: 115px;
-    height: 55px;
+    height: auto;
+    max-height: 55px;
   }
   .footer-heading p {
     font-size: 15px;

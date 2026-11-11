@@ -4,6 +4,7 @@ import Link from "next/link";
 import {
   ArrowRight,
   ArrowUpRight,
+  ArrowLeft,
   ShoppingBag,
   MessageCircle,
   Info,
@@ -16,15 +17,21 @@ export default function ProductDetail({ product: p }: { product: Product }) {
   const { add, setOpen } = useStore();
   return (
     <main id="conteudo" className="product-page">
-      <nav className="breadcrumbs" aria-label="Caminho de navegação">
-        <Link href="/">Início</Link>
-        <span>/</span>
-        <Link href="/loja/">Loja</Link>
-        <span>/</span>
-        <Link href={`/loja/?categoria=${p.category}`}>{p.category}</Link>
-        <span>/</span>
-        <span>{p.name}</span>
-      </nav>
+      <div className="product-top-nav">
+        <Link href="/loja/" className="back-link">
+          <ArrowLeft size={16} />
+          <span>Voltar para a loja</span>
+        </Link>
+        <nav className="breadcrumbs" aria-label="Caminho de navegação">
+          <Link href="/">Início</Link>
+          <span>/</span>
+          <Link href="/loja/">Loja</Link>
+          <span>/</span>
+          <Link href={`/loja/?categoria=${p.category}`}>{p.category}</Link>
+          <span>/</span>
+          <span>{p.name}</span>
+        </nav>
+      </div>
       <div className="product-detail">
         <div className="detail-visual">
           <img src={`/images/${p.image}.webp`} alt={p.name} />

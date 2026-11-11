@@ -231,19 +231,29 @@ export function Cart() {
                 <PartGlyph kind="basket" size={56} />
                 <h3>Seu carrinho está vazio.</h3>
                 <p>Escolha um equipamento na loja para começar.</p>
-                <Link
-                  href="/loja/"
-                  className="button"
-                  onClick={() => setOpen(false)}
-                >
-                  Conhecer os equipamentos
-                </Link>
+                <div style={{ display: "flex", gap: "10px", justifyContent: "center", flexWrap: "wrap" }}>
+                  <Link
+                    href="/loja/"
+                    className="button"
+                    onClick={() => setOpen(false)}
+                  >
+                    Conhecer os equipamentos
+                  </Link>
+                  <button
+                    type="button"
+                    className="button button-secondary"
+                    onClick={() => setOpen(false)}
+                  >
+                    Fechar
+                  </button>
+                </div>
               </div>
             ) : (
               <>
                 <div className="cart-lines">
                   {lines.map((line) => {
-                    const p = products.find((x) => x.id === line.id)!;
+                    const p = products.find((x) => x.id === line.id);
+                    if (!p) return null;
                     return (
                       <div className="cart-line" key={line.id}>
                         <Link

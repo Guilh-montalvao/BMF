@@ -1,4 +1,5 @@
 "use client";
+import { useState } from "react";
 import Link from "next/link";
 import { ArrowUpRight, ArrowRight, Check } from "./glyphs";
 import { motion, useReducedMotion } from "motion/react";
@@ -67,7 +68,16 @@ export function ProductCard({
   product: Product;
   index?: number;
 }) {
-  const { add } = useStore();
+  const { add, setOpen } = useStore();
+  const [added, setAdded] = useState(false);
+
+  const handleAdd = () => {
+    add(product.id);
+    setAdded(true);
+    setOpen(true);
+    setTimeout(() => setAdded(false), 2000);
+  };
+
   return (
     <Reveal delay={index * 0.04} className="product-card">
       <Link href={`/produto/${product.id}/`} className="product-visual">
@@ -93,9 +103,10 @@ export function ProductCard({
         <small>valor demonstrativo</small>
         <button
           aria-label={`Adicionar ${product.name} ao carrinho`}
-          onClick={() => add(product.id)}
+          onClick={handleAdd}
+          className={added ? "added" : ""}
         >
-          Adicionar
+          {added ? "Adicionado ✓" : "Adicionar"}
         </button>
       </div>
     </Reveal>
