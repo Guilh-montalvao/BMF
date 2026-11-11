@@ -1,0 +1,31 @@
+BMF — WEBSITE
+Versão reformulada aprovada
+
+CONTEÚDO
+- Código-fonte Next.js, React, TypeScript, Tailwind, GSAP e Motion na raiz.
+- Imagens e fontes em public/.
+- Cópia estática pronta para hospedagem em site-estatico/.
+- README.md com informações técnicas e requisitos de ativação comercial.
+
+EXECUTAR NO COMPUTADOR
+1. Instale Node.js 20.9 ou superior e npm.
+2. Abra a pasta BMF-Website no terminal.
+3. Execute: npm ci
+4. Execute: npm run dev
+5. Acesse o endereço exibido no terminal, normalmente http://localhost:3000.
+
+GERAR NOVA VERSÃO ESTÁTICA
+Execute: npm run build
+O resultado será gerado em out/.
+
+HOSPEDAR A CÓPIA JÁ COMPILADA
+Publique o conteúdo da pasta site-estatico/ na raiz do domínio de uma hospedagem estática.
+Para visualizar no computador, sirva essa pasta com um servidor HTTP; não abra index.html por clique duplo.
+A cópia site-estatico/ corresponde ao código incluído neste arquivo.
+
+LOJA
+O catálogo e o checkout são demonstrativos. Não há cobrança nem envio real de pedidos.
+Para vender, cadastre catálogo, preços e estoque reais e integre backend e provedor de pagamentos.
+
+VERSÃO DO CÓDIGO
+cdaa269baf7d958f69feaf5e57aecd74f9990abb

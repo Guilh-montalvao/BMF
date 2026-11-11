@@ -1,0 +1,32 @@
+1:"$Sreact.fragment"
+2:"/_next/static/chunks/13tvnqc4xogjl.js"
+3:"/_next/static/chunks/2oawlvzfmncxf.js"
+4:I[99815,["$2","$3"],"StoreProvider"]
+5:I[138,["$2","$3"],"Header"]
+6:I[39756,["$2","$3"],"default"]
+7:I[37457,["$2","$3"],"default"]
+8:"/_next/static/chunks/39zgd1xg4rrtu.js"
+9:I[45910,["$2","$3","$8"],"ButtonLink"]
+a:I[138,["$2","$3"],"Footer"]
+b:I[138,["$2","$3"],"Cart"]
+11:I[97367,["$2","$3"],"OutletBoundary"]
+12:"$Sreact.suspense"
+14:"ViewportBoundary"
+15:I[97367,["$2","$3"],"$14"]
+17:"MetadataBoundary"
+18:I[97367,["$2","$3"],"$17"]
+1a:I[68027,["$2","$3"],"default",1]
+:HL["/_next/static/chunks/2agujshbruhtq.css","style"]
+d:X
+f:[["children",{"s":"__PAGE__","h":512,"d":{"r":["$","$1","c",{"children":["$L10",[["$","script","script-0",{"src":"/_next/static/chunks/246quwfgee6ro.js","async":true,"nonce":"$undefined"}]],["$","$L11",null,{"children":["$","$12",null,{"name":"Next.MetadataOutlet","children":"$@13"}]}]]}],"p":false,"v":null}}]]
+e:[["children",{"s":{"n":"slug","t":"d","k":"bomba-centrifuga","s":[]},"h":512,"d":{"r":["$","$1","c",{"children":[null,["$","$L6",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],"p":false,"v":"$d"},"c":"$Qf"}]]
+c:[["children",{"s":"produto","h":512,"d":{"r":["$","$1","c",{"children":[null,["$","$L6",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],"p":false,"v":"$d"},"c":"$Qe"}]]
+0:{"P":null,"c":["","produto","bomba-centrifuga",""],"q":"","i":false,"t":{"t":{"s":"","h":528,"d":{"r":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/2agujshbruhtq.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/13tvnqc4xogjl.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/_next/static/chunks/2oawlvzfmncxf.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"pt-BR","children":["$","body",null,{"children":["$","$L4",null,{"children":[["$","$L5",null,{}],["$","div",null,{"className":"site-content","children":[["$","$L6",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L7",null,{}],"templateStyles":[],"templateScripts":null,"notFound":[["$","main",null,{"id":"conteudo","className":"checkout-page","children":["$","div",null,{"className":"checkout-confirm","children":[["$","span",null,{"className":"micro","children":"BMF / 404"}],["$","h1",null,{"className":"mt-5","children":["Página",["$","br",null,{}],["$","span",null,{"className":"blue","children":"não encontrada."}]]}],["$","p",null,{"children":"Volte para a bancada inicial ou procure seu equipamento na loja."}],["$","$L9",null,{"href":"/","children":"Voltar ao início"}],["$","$L9",null,{"href":"/loja/","className":"button-dark","children":"Explorar a loja"}]]}]}],[]],"forbidden":"$undefined","unauthorized":"$undefined"}],["$","$La",null,{}]]}],["$","$Lb",null,{}]]}]}]}]]}],"p":false,"v":null},"c":"$Qc"},"h":{"r":["$","$1","h",{"children":[null,["$","$L15",null,{"children":"$L16"}],["$","$L18",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$12",null,{"name":"Next.Metadata","children":"$L19"}]}],null]}],null]}],"p":false,"v":null}},"m":"$undefined","G":["$1a",[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/2agujshbruhtq.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]]],"S":true,"r":"$undefined","s":"$undefined","a":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"-dswuMJ99lVOpxX4YLLwz"}
+1b:"/_next/static/chunks/246quwfgee6ro.js"
+1c:I[8535,["$2","$3","$1b"],"default"]
+d:C
+10:["$","$L1c",null,{"product":{"id":"bomba-centrifuga","name":"Conjunto motobomba","category":"Bombas","image":"pump","price":1890,"tag":"LINHA HIDRÁULICA","description":"Conjunto de bomba centrífuga e motor elétrico para movimentação de água. O dimensionamento depende da vazão, da altura e da aplicação. Produto demonstrativo.","specs":[["Tipo","Bomba centrífuga"],["Aplicação","Movimentação de água"],["Dimensionamento","Conforme a necessidade"],["Imagem","Ilustrativa"]]}}]
+16:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+1d:I[27201,["$2","$3"],"IconMark"]
+13:null
+19:[["$","title","0",{"children":"Conjunto motobomba | BMF"}],["$","meta","1",{"name":"description","content":"Bombas, motores e ferramentas no Distrito Federal. Manutenção, rebobinamento, venda de equipamentos e coleta e entrega com a BMF."}],["$","meta","2",{"name":"robots","content":"noindex, nofollow"}],["$","meta","3",{"property":"og:title","content":"BMF — Loja e oficina em Samambaia"}],["$","meta","4",{"property":"og:description","content":"Bombas, motores e ferramentas. Da escolha do equipamento à manutenção."}],["$","meta","5",{"property":"og:locale","content":"pt_BR"}],["$","meta","6",{"property":"og:image","content":"https://bmf-bombas-motores.mateusmrm.chatgpt.site/images/shop-banner.webp"}],["$","meta","7",{"property":"og:type","content":"website"}],["$","meta","8",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","9",{"name":"twitter:title","content":"BMF — Loja e oficina em Samambaia"}],["$","meta","10",{"name":"twitter:description","content":"Bombas, motores e ferramentas. Da escolha do equipamento à manutenção."}],["$","meta","11",{"name":"twitter:image","content":"https://bmf-bombas-motores.mateusmrm.chatgpt.site/images/shop-banner.webp"}],["$","link","12",{"rel":"icon","href":"/images/logo.webp"}],["$","$L1d","13",{}]]
