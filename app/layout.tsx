@@ -3,15 +3,18 @@ import { StoreProvider } from "@/components/store";
 import { Header, Footer, Cart } from "@/components/shell";
 import "./globals.css";
 export const metadata: Metadata = {
-  title: { default: "BMF — Loja e oficina em Samambaia", template: "%s | BMF" },
+  title: {
+    default: "BMF Bombas — Especialistas em Bombas, Poços e Motores em Brasília",
+    template: "%s | BMF Bombas",
+  },
   description:
-    "Bombas, motores e ferramentas no Distrito Federal. Manutenção, rebobinamento, venda de equipamentos e coleta e entrega com a BMF.",
+    "Mais de 17 anos no DF. Manutenção de bombas d’água, poços artesianos, rebobinamento de motores elétricos e quadros de comando com oficina própria em Samambaia.",
   metadataBase: new URL("https://bmf-bombas-motores.mateusmrm.chatgpt.site"),
   icons: { icon: "/images/logo.webp" },
   openGraph: {
-    title: "BMF — Loja e oficina em Samambaia",
+    title: "BMF Bombas — Especialistas em Bombas, Poços e Motores em Brasília",
     description:
-      "Bombas, motores e ferramentas. Da escolha do equipamento à manutenção.",
+      "A mesma engenharia e confiabilidade que atende os maiores hospitais e shoppings do Distrito Federal.",
     images: ["/images/shop-banner.webp"],
     locale: "pt_BR",
     type: "website",

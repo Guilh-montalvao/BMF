@@ -16,14 +16,17 @@ export default function Page() {
       </div>
       <section className="service-page-heading">
         <div>
-          <Eyebrow>A oficina da BMF / Samambaia</Eyebrow>
+          <Eyebrow>Oficina Especializada · 17+ Anos no Distrito Federal</Eyebrow>
           <h1>
-            Conte o defeito.
-            <br />A gente olha de perto.
+            Manutenção de Bombas,
+            <br />
+            Poços e Motores Elétricos.
           </h1>
           <p>
-            Manutenção e conserto de bombas, motores e ferramentas. Informe o
-            equipamento e o que aconteceu para começar o atendimento.
+            Do conserto emergencial à manutenção preventiva. Atendimento ágil
+            com oficina própria em Samambaia, torno, solda, retirada de poço
+            artesiano e a mesma engenharia que mantém hospitais e shoppings
+            funcionando sem parar.
           </p>
           <ButtonLink href="#solicitar">
             Conversar sobre meu equipamento

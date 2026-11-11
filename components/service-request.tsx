@@ -50,11 +50,13 @@ export default function ServiceRequest() {
             Selecione o equipamento
           </option>
           <option>Motor elétrico / rebobinamento</option>
-          <option>Bomba d’água</option>
-          <option>Bomba de poço artesiano</option>
-          <option>Ferramenta elétrica</option>
-          <option>Lavadora / equipamento de limpeza</option>
-          <option>Outro equipamento ou serviço</option>
+          <option>Bomba d’água (recalque, pressurização, piscina)</option>
+          <option>Bomba de poço artesiano (retirada / instalação)</option>
+          <option>Quadro de comando / painel elétrico</option>
+          <option>Ferramenta elétrica (furadeira, lixadeira, serra)</option>
+          <option>Lavadora de alta pressão / enceradeira industrial</option>
+          <option>Torno mecânico, solda ou usinagem</option>
+          <option>Outro equipamento, peça ou serviço</option>
         </select>
       </div>
       <div className="form-field">

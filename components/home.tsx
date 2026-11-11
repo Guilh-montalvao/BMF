@@ -6,7 +6,19 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { ButtonLink, Eyebrow, Reveal, ProductCard } from "./ui";
 import { PartGlyph } from "./glyphs";
-import { products, categories, whatsapp, mapEmbed, mapUrl } from "@/lib/data";
+import {
+  products,
+  categories,
+  clients,
+  differentiators,
+  whatsapp,
+  mapEmbed,
+  mapUrl,
+  PHONE_LANDLINE,
+  PHONE_WHATSAPP,
+  COMPANY_ADDRESS,
+  COMPANY_CEP,
+} from "@/lib/data";
 
 const equipment = [
   {
@@ -22,25 +34,25 @@ const equipment = [
   },
   {
     name: "Bombas",
-    title: "Bomba d’água",
+    title: "Bomba d’água & Poço",
     image: "pump",
     glyph: "pump" as const,
     category: "Bombas",
     buy: "Ver bombas na loja",
     service: "Manutenção de bombas",
     description:
-      "Bombas d’água, sistemas hidráulicos e bombas de poço artesiano.",
+      "Bombas d’água, poços artesianos e sistemas hidráulicos e pneumáticos.",
     question: "A bomba parou ou perdeu pressão?",
   },
   {
     name: "Ferramentas",
-    title: "Ferramenta de trabalho",
-    image: "category-tools",
+    title: "Ferramenta profissional",
+    image: "furadeira-dewalt",
     glyph: "tools" as const,
     category: "Ferramentas",
     buy: "Ver ferramentas na loja",
     service: "Conserto de ferramentas",
-    description: "Furadeiras, serras, lixadeiras e equipamentos de limpeza.",
+    description: "Furadeiras, marteletes, serras, lixadeiras e lavadoras de pressão.",
     question: "Sua ferramenta precisa de reparo?",
   },
 ];
@@ -173,17 +185,17 @@ export default function Home() {
         <section className="workbench" aria-labelledby="bench-title">
           <div className="bench-intro">
             <div>
-              <Eyebrow>Loja & oficina / Distrito Federal</Eyebrow>
+              <Eyebrow>BMF Comércio de Bombas (Eletro Ivo) · 17+ Anos no Distrito Federal</Eyebrow>
               <h1 id="bench-title">
-                Comprar ou consertar?
+                Soluções em Bombas, Motores
                 <br />
-                <span>Comece pelo equipamento.</span>
+                <span>e Manutenção em Brasília.</span>
               </h1>
             </div>
             <p>
-              O balcão da BMF, agora por aqui.
+              Especialistas em conserto de bombas d’água, poços artesianos e motores elétricos.
               <br />
-              Escolha o que você precisa cuidar.
+              Agilidade técnica e o mesmo rigor que mantém hospitais, shoppings e órgãos federais funcionando sem parar.
             </p>
           </div>
           <div className="bench-assembly">
@@ -346,6 +358,80 @@ export default function Home() {
             </a>
           </div>
         </section>
+
+        {/* Clientes Institucionais de Missão Crítica */}
+        <section className="clients-section" id="clientes">
+          <Reveal className="clients-header">
+            <Eyebrow>Autoridade Institucional & Missão Crítica</Eyebrow>
+            <h2>A mesma engenharia que mantém as maiores operações de Brasília sem parar.</h2>
+            <div className="clients-pitch">
+              <p>
+                <strong>Você sabe o que acontece se o sistema de bombeamento de água de um grande hospital ou shopping falhar por dez minutos?</strong>
+                <br />
+                Uma cirurgia para, lojas fecham as portas e o prejuízo é incalculável. Essas instituições exigem velocidade absoluta de resposta, conformidade e zero margem para erro.
+                <br /><br />
+                Quando você contrata a BMF Bombas, traz para dentro do seu condomínio, empresa, indústria ou residência essa mesma confiabilidade técnica homologada pelos maiores nomes de Brasília.
+              </p>
+            </div>
+          </Reveal>
+          <div className="clients-grid">
+            {clients.map((c) => (
+              <Reveal key={c.name} className="client-card">
+                <div className="client-logo-wrap">
+                  {c.image ? (
+                    <img src={c.image} alt={c.name} loading="lazy" />
+                  ) : (
+                    <span className="client-gov-badge">
+                      <PartGlyph kind="shield" size={16} /> Órgão Público Federal
+                    </span>
+                  )}
+                </div>
+                <strong>{c.name}</strong>
+                <span>{c.category}</span>
+              </Reveal>
+            ))}
+          </div>
+        </section>
+
+        {/* Por que escolher a BMF & Equipe Técnica */}
+        <section className="why-choose-section" id="diferenciais">
+          <Reveal>
+            <Eyebrow>Diferenciais BMF Bombas</Eyebrow>
+            <h2>Por que condomínios, construtoras e indústrias escolhem a BMF?</h2>
+          </Reveal>
+          <div className="why-grid">
+            {differentiators.map((d) => (
+              <Reveal key={d.number} className="why-card">
+                <span className="why-number">{d.number}</span>
+                <h3>{d.title}</h3>
+                <p>{d.desc}</p>
+              </Reveal>
+            ))}
+          </div>
+          <Reveal className="team-highlight">
+            <div>
+              <Eyebrow>Segurança e Identificação em Campo</Eyebrow>
+              <h3>Técnicos Próprios e Padronizados para Atendimento no DF</h3>
+              <p>
+                Para atuar dentro de hospitais, condomínios ou canteiros de obras, identificação visual e segurança são prioridades. Nossa equipe atua uniformizada, equipada com EPIs e habilitada para diagnósticos e manutenções com total transparência e pontualidade.
+              </p>
+              <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
+                <ButtonLink href={whatsapp("Olá! Gostaria de agendar uma avaliação técnica com a equipe da BMF.")}>
+                  Falar com um técnico
+                </ButtonLink>
+                <ButtonLink href="/servicos/" secondary>
+                  Conhecer nossos serviços
+                </ButtonLink>
+              </div>
+            </div>
+            <img
+              src="/images/uniforme-tecnico.webp"
+              alt="Uniforme industrial BMF frente e verso — equipe técnica identificada"
+              loading="lazy"
+            />
+          </Reveal>
+        </section>
+
         <section className="repair-story" id="manutencao">
           <div className="repair-intro">
             <Eyebrow>Dentro da oficina</Eyebrow>
@@ -384,6 +470,30 @@ export default function Home() {
               <Link href="/servicos/" className="inline-link">
                 Conhecer os serviços da BMF
               </Link>
+              <div
+                style={{
+                  marginTop: "20px",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "14px",
+                  background: "#f0f5eb",
+                  padding: "12px 16px",
+                  borderRadius: "6px",
+                  border: "1px solid #c9d8c3",
+                }}
+              >
+                <img
+                  src="/images/caderno-bmf.webp"
+                  alt="Caderno BMF"
+                  style={{ width: "42px", height: "46px", objectFit: "contain" }}
+                  loading="lazy"
+                />
+                <div style={{ fontSize: "11px", lineHeight: "1.5", color: "#3d5343" }}>
+                  <strong>Orçamento Técnico Transparente</strong>
+                  <br />
+                  Anotação minuciosa e laudo antes de qualquer execução.
+                </div>
+              </div>
             </div>
             <div className={`repair-media phase-${phase}`}>
               <div className="repair-media-base">
@@ -577,20 +687,25 @@ export default function Home() {
         </section>
         <section className="bmf-desk" id="contato">
           <div className="desk-info">
-            <Eyebrow>A oficina está em Samambaia.</Eyebrow>
+            <Eyebrow>Oficina própria em Samambaia · Desde 2009</Eyebrow>
             <h2>
               Pode chegar.
               <br />
               Ou chamar por aqui.
             </h2>
-            <a className="desk-phone" href="tel:+5561996971240">
-              <span>61</span>99697–1240
-            </a>
+            <div style={{ display: "flex", flexDirection: "column", gap: "6px", margin: "14px 0" }}>
+              <a className="desk-phone" href="tel:+556134583929">
+                <span>61</span>3458–3929
+              </a>
+              <a className="desk-phone" href="tel:+5561996971240">
+                <span>61</span>99697–1240
+              </a>
+            </div>
             <div className="desk-address">
               <p>
-                ADE — Samambaia
+                Quadra ADE Sul, Conjunto 06, Lote 06
                 <br />
-                Brasília / DF · 72314-708
+                Samambaia — Brasília / DF · 72314-706
               </p>
               <p>
                 Segunda a sexta
@@ -603,7 +718,7 @@ export default function Home() {
             >
               Conversar no WhatsApp
             </ButtonLink>
-            <small>Feriados: consulte o atendimento.</small>
+            <small>Atendimento a condomínios, empresas e residências.</small>
           </div>
           <div className="desk-map">
             <iframe

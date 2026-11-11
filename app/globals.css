@@ -50,6 +50,26 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 85px;
+  scrollbar-width: thin;
+  scrollbar-color: #8c9d87 #edf2e8;
+}
+/* Custom Vertical & Horizontal Scrollbar */
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+::-webkit-scrollbar-track {
+  background: #edf2e8;
+  border-left: 1px solid #dbe4d5;
+}
+::-webkit-scrollbar-thumb {
+  background: #8c9d87;
+  border-radius: 6px;
+  border: 2px solid #edf2e8;
+  transition: background 0.2s ease;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--blue);
 }
 body {
   margin: 0;
@@ -948,6 +968,178 @@ small {
 .repair-media-caption i span {
   font-size: 10px;
   color: #7b92b4;
+}
+
+/* Institutional Authority & Client Logos */
+.clients-section {
+  padding: 65px 40px;
+  background: #ffffff;
+  border-bottom: 1px solid #d9e3d4;
+}
+.clients-header {
+  max-width: 950px;
+  margin-bottom: 35px;
+}
+.clients-header h2 {
+  font-family: var(--display);
+  font-size: 32px;
+  line-height: 1.25;
+  letter-spacing: -0.8px;
+  color: var(--navy);
+  margin: 12px 0 16px;
+}
+.clients-pitch {
+  font-size: 13.5px;
+  line-height: 1.8;
+  color: #3b5042;
+  border-left: 3px solid var(--blue);
+  background: #f4f7f1;
+  padding: 16px 22px;
+  border-radius: 0 8px 8px 0;
+  margin-top: 18px;
+}
+.clients-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 20px;
+  align-items: stretch;
+  margin-top: 30px;
+}
+.client-card {
+  background: #f8faf5;
+  border: 1px solid #dbe4d4;
+  border-radius: 8px;
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.client-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(21, 27, 204, 0.08);
+  border-color: var(--blue);
+}
+.client-logo-wrap {
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+  width: 100%;
+}
+.client-logo-wrap img {
+  max-height: 50px;
+  max-width: 160px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+}
+.client-card:hover .client-logo-wrap img {
+  transform: scale(1.05);
+}
+.client-gov-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--navy);
+  padding: 8px 14px;
+  background: #e2ebd9;
+  border: 1px solid #cbdac1;
+  border-radius: 4px;
+}
+.client-card strong {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--navy);
+  margin-top: 6px;
+}
+.client-card span {
+  font-size: 10px;
+  font-family: var(--mono);
+  color: #687e6b;
+  margin-top: 3px;
+}
+
+/* Why Choose BMF & Team Highlight */
+.why-choose-section {
+  padding: 70px 40px;
+  background: #edf1e7;
+  border-bottom: 1px solid #d5dfce;
+}
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 22px;
+  margin-top: 35px;
+}
+.why-card {
+  background: #ffffff;
+  border: 1px solid #cbd8c4;
+  border-radius: 8px;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.why-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+}
+.why-number {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--blue);
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+.why-card h3 {
+  font-family: var(--display);
+  font-size: 17px;
+  color: var(--navy);
+  margin: 0 0 10px;
+  line-height: 1.35;
+}
+.why-card p {
+  font-size: 12px;
+  line-height: 1.7;
+  color: #4b6151;
+  margin: 0;
+}
+.team-highlight {
+  margin-top: 45px;
+  background: #ffffff;
+  border: 1px solid #c8d6c0;
+  border-radius: 10px;
+  padding: 35px 40px;
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 35px;
+  align-items: center;
+}
+.team-highlight h3 {
+  font-family: var(--display);
+  font-size: 22px;
+  color: var(--navy);
+  margin: 10px 0 12px;
+}
+.team-highlight p {
+  font-size: 13px;
+  line-height: 1.8;
+  color: #495e50;
+  margin: 0 0 20px;
+}
+.team-highlight img {
+  width: 100%;
+  height: auto;
+  max-height: 240px;
+  object-fit: contain;
 }
 /* Retail as shelves, not a row of campaign cards. */
 .home-shop {
@@ -3274,8 +3466,47 @@ small {
   .checkout-card h2 {
     font-size: 16px;
   }
+  .team-highlight {
+    grid-template-columns: 1fr;
+    padding: 28px 22px;
+    gap: 20px;
+  }
+  .team-highlight img {
+    max-height: 200px;
+    margin: 0 auto;
+  }
 }
 @media (max-width: 700px) {
+  .clients-section,
+  .why-choose-section {
+    padding: 45px 20px;
+  }
+  .clients-header h2 {
+    font-size: 24px;
+  }
+  .clients-pitch {
+    font-size: 12px;
+    padding: 14px 16px;
+  }
+  .clients-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .client-card {
+    padding: 16px 10px;
+    min-height: 105px;
+  }
+  .client-logo-wrap {
+    height: 38px;
+  }
+  .client-logo-wrap img {
+    max-height: 36px;
+    max-width: 110px;
+  }
+  .why-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
   :root {
     --rail: 0px;
   }

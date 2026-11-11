@@ -5,7 +5,17 @@ import { usePathname } from "next/navigation";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { PartGlyph, X, Trash2 } from "./glyphs";
 import { useStore } from "./store";
-import { money, products, whatsapp, mapUrl } from "@/lib/data";
+import {
+  money,
+  products,
+  whatsapp,
+  mapUrl,
+  PHONE_LANDLINE,
+  PHONE_WHATSAPP,
+  COMPANY_ADDRESS,
+  COMPANY_CEP,
+  COMPANY_LEGAL_NAME,
+} from "@/lib/data";
 import { Quantity } from "./ui";
 function FocusPanel({
   children,
@@ -338,17 +348,31 @@ export function Footer() {
   return (
     <footer className="footer">
       <div className="footer-heading">
-        <img src="/images/logo.webp" alt="BMF" width="130" height="60" />
+        <img
+          src="/images/logo.webp"
+          alt="BMF Bombas — Eletro Ivo"
+          width="130"
+          height="60"
+        />
         <p>
-          Uma oficina.
+          Mais de 17 anos em Brasília.
           <br />
-          Várias formas de ajudar.
+          Especialistas em bombas d’água, poços e motores elétricos.
         </p>
-        <a href="tel:+5561996971240">(61) 99697-1240</a>
+        <div className="footer-phones">
+          <a href="tel:+556134583929">(61) 3458-3929</a>
+          <a
+            href={whatsapp("Olá! Preciso de atendimento da BMF Bombas.")}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            (61) 99697-1240 (WhatsApp)
+          </a>
+        </div>
       </div>
       <div className="footer-details">
         <div>
-          <span>Atendimento</span>
+          <span>Atendimento & Emergências</span>
           <a
             href={whatsapp("Olá! Preciso de atendimento da BMF.")}
             target="_blank"
@@ -356,6 +380,7 @@ export function Footer() {
           >
             Conversar no WhatsApp
           </a>
+          <a href="tel:+556134583929">Oficina: (61) 3458-3929</a>
           <a
             href="https://www.instagram.com/bmf_bombas/"
             target="_blank"
@@ -365,32 +390,34 @@ export function Footer() {
           </a>
         </div>
         <div>
-          <span>A oficina</span>
+          <span>Sede & Oficina</span>
           <a href={mapUrl} target="_blank" rel="noopener noreferrer">
-            ADE — Samambaia, Brasília / DF
+            Quadra ADE Sul, Conjunto 06, Lote 06
             <br />
-            CEP 72314-708
+            Samambaia, Brasília / DF · CEP 72314-706
           </a>
           <p>
             Segunda a sexta, 08h às 18h.
             <br />
-            Feriados: consulte a equipe.
+            Atendimento para condomínios, empresas e residências.
           </p>
         </div>
         <div>
-          <span>Equipamentos & serviços</span>
-          <Link href="/loja/">Comprar equipamentos</Link>
-          <Link href="/servicos/">Solicitar manutenção</Link>
-          <Link href="/#coleta">Combinar coleta e entrega</Link>
+          <span>Equipamentos & Serviços</span>
+          <Link href="/servicos/">Bombas d’Água & Poços Artesianos</Link>
+          <Link href="/servicos/">Rebobinamento & Motores</Link>
+          <Link href="/servicos/">Quadros de Comando & Automação</Link>
+          <Link href="/loja/">Comprar equipamentos e peças</Link>
+          <Link href="/#coleta">Coleta e entrega em todo o DF</Link>
         </div>
       </div>
       <div className="footer-bottom">
         <p>
-          Eletro Ivo — Bombas, Motores e Ferramentas LTDA
+          BMF Comércio de Bombas — Eletro Ivo - Bombas, Motores e Ferramentas LTDA
           <br />
-          CNPJ 11.042.318/0001-51
+          CNPJ 11.042.318/0001-51 · Fundação em 2009 (Mais de 17 anos de tradição no DF)
         </p>
-        <span>© {new Date().getFullYear()} BMF</span>
+        <span>© {new Date().getFullYear()} BMF Bombas</span>
         <button
           onClick={() =>
             window.scrollTo({
@@ -401,7 +428,7 @@ export function Footer() {
             })
           }
         >
-          Voltar ao começo
+          Voltar ao começo ↑
         </button>
       </div>
     </footer>
