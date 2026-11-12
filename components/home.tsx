@@ -124,21 +124,23 @@ export default function Home() {
         );
 
         // Floating shield in Clients Authority section
-        gsap.fromTo(
-          ".clients-floating-emblem",
-          { y: 35, rotate: -6 },
-          {
-            y: -35,
-            rotate: 6,
-            ease: "none",
-            scrollTrigger: {
-              trigger: ".clients-section",
-              start: "top bottom",
-              end: "bottom top",
-              scrub: 1.2,
+        if (root.current?.querySelector(".clients-shield-visual")) {
+          gsap.fromTo(
+            ".clients-shield-visual",
+            { y: 20, rotate: -4 },
+            {
+              y: -20,
+              rotate: 4,
+              ease: "none",
+              scrollTrigger: {
+                trigger: ".clients-section",
+                start: "top bottom",
+                end: "bottom top",
+                scrub: 1.2,
+              },
             },
-          },
-        );
+          );
+        }
 
         // Stagger reveal of client logos on scroll
         gsap.from(".client-ledger-item", {
