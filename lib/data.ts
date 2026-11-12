@@ -110,7 +110,7 @@ export const products: Product[] = [
 export const categories = [
   {
     name: "Motores",
-    image: "category-motors",
+    image: "elements/pilar-visita",
     subtitle: "Motores elétricos",
     number: "01",
   },
@@ -122,7 +122,7 @@ export const categories = [
   },
   {
     name: "Ferramentas",
-    image: "category-tools",
+    image: "bosch-combo",
     subtitle: "Ferramentas de trabalho",
     number: "03",
   },
@@ -171,23 +171,58 @@ export const clients: Client[] = [
 export const differentiators = [
   {
     number: "01",
-    title: "Contratos Preventivos & Corretivos",
-    desc: "Planos sob medida para condomínios, hospitais, indústrias e construtoras evitarem paradas inesperadas e reduzirem custos com queimas de equipamentos.",
+    tag: "GESTÃO RECORRENTE · B2B & CONDOMÍNIOS",
+    title: "Contratos de Manutenção Preventiva e Corretiva",
+    image: "/images/elements/contrato-ciclo-motor.webp",
+    specLabel: "CICLO PREVENTIVO + CORRETIVO",
+    specValue: "SLA prioritário · Visitas periódicas · Previsibilidade",
+    desc: "Não espere a bomba principal queimar ou o motor parar a sua obra. Nossos contratos garantem inspeções periódicas in loco, relatórios técnicos e socorro prioritário para manter seus equipamentos sempre operando.",
+    ctaLabel: "Conhecer planos de contrato",
+    ctaHref: "/servicos/?aba=contratos",
   },
   {
     number: "02",
-    title: "Visita Técnica In Loco no DF",
-    desc: "Nossa equipe vai até o cliente para inspecionar a casa de bombas, poço artesiano ou quadro elétrico, entender a causa raiz do problema e propor a solução exata.",
+    tag: "CHECKLIST TÉCNICO PROGRAMADO",
+    title: "Manutenção Preventiva com Diagnóstico Antecipado",
+    image: "/images/elements/pilar-contratos.webp",
+    specLabel: "PROTOCOLO DE INSPEÇÃO",
+    specValue: "Megômetro · Corrente · Rolamentos · Selos · Quadros",
+    desc: "Planos sob medida para condomínios, hospitais, indústrias e construtoras identificarem desgaste de rolamentos, aquecimento, perda de isolação e vazamentos antes que se tornem paradas críticas.",
+    ctaLabel: "Ver escopo da preventiva",
+    ctaHref: "/servicos/?aba=contratos",
   },
   {
     number: "03",
-    title: "Oficina Própria Completa (+17 Anos)",
-    desc: "Sede própria em Samambaia com bancada de rebobinamento, torno mecânico, solda, montagem de painéis e estoque de peças para resposta imediata.",
+    tag: "ENGENHARIA EM CAMPO NO DF",
+    title: "Visita Técnica In Loco para Entender e Resolver",
+    image: "/images/elements/pilar-visita.webp",
+    specLabel: "COBERTURA PRESENCIAL",
+    specValue: "Brasília e Entorno · Casa de Bombas · Poços · Obras",
+    desc: "Nossa equipe vai até o cliente para inspecionar a casa de bombas, poço artesiano ou quadro elétrico no local, diagnosticar a causa raiz do problema e executar a retirada e reinstalação técnica.",
+    ctaLabel: "Agendar visita técnica",
+    ctaHref: "#coleta",
   },
   {
     number: "04",
-    title: "Padrão de Missão Crítica",
-    desc: "A mesma engenharia e velocidade de resposta homologadas por grandes hospitais, shoppings e órgãos federais aplicadas ao seu negócio.",
+    tag: "INFRAESTRUTURA PRÓPRIA · DESDE 2009",
+    title: "Oficina Completa de Rebobinamento, Torno e Bancada",
+    image: "/images/elements/pilar-oficina.webp",
+    specLabel: "SEDE PRÓPRIA EM SAMAMBAIA",
+    specValue: "Rebobinamento · Torno mecânico · Solda · Testes",
+    desc: "Mais de 17 anos de tradição com bancada de rebobinamento de motores, usinagem própria em torno mecânico, montagem de painéis elétricos e peças de reposição sem depender de terceiros.",
+    ctaLabel: "Conhecer nossa oficina",
+    ctaHref: "/servicos/?aba=motores",
+  },
+  {
+    number: "05",
+    tag: "OPERAÇÃO CONTÍNUA · ZERO DOWNTIME",
+    title: "Padrão de Missão Crítica Homologado no DF",
+    image: "/images/elements/pilar-missao-critica.webp",
+    specLabel: "CONFIABILIDADE OPERACIONAL",
+    specValue: "Hospitais · Shoppings · Órgãos Federais · Indústrias",
+    desc: "A mesma engenharia, conformidade técnica e velocidade de resposta exigidas pelas operações mais críticas de Brasília aplicadas diretamente ao seu condomínio, construtora ou empresa.",
+    ctaLabel: "Falar com especialista",
+    ctaHref: "/servicos/",
   },
 ];
 
@@ -215,7 +250,7 @@ export const serviceTabs: ServiceTab[] = [
       "Previsibilidade operacional, visitas técnicas programadas e socorro prioritário para quem não pode parar.",
     description:
       "Um motor queimado ou uma bomba parada sem aviso gera falta d'água em condomínios, paralisa obras e compromete operações hospitalares e comerciais. Com o Contrato de Manutenção BMF, sua operação conta com acompanhamento técnico contínuo, manutenção preventiva programada e atendimento corretivo imediato.",
-    image: "maintenance",
+    image: "elements/contrato-ciclo-motor",
     highlights: [
       {
         title: "Manutenção Preventiva Programada",
@@ -250,7 +285,7 @@ export const serviceTabs: ServiceTab[] = [
       "Recuperação eletromecânica completa de motores monofásicos e trifásicos de todos os portes.",
     description:
       "Executamos manutenção preventiva e corretiva em motores elétricos industriais, prediais e comerciais. Nossa oficina em Samambaia realiza desde o rebobinamento completo com fios de cobre de alta isolação térmica até a recuperação mecânica de eixos e tampas em torno próprio.",
-    image: "copper",
+    image: "elements/pilar-oficina",
     highlights: [
       {
         title: "Rebobinamento Técnico de Precisão",
@@ -320,7 +355,7 @@ export const serviceTabs: ServiceTab[] = [
       "Conserto ágil e contratos de manutenção para frotas de ferramentas de construtoras e oficinas.",
     description:
       "Ferramenta parada no canteiro de obras significa equipe ociosa e atraso no cronograma. A BMF realiza manutenção corretiva e preventiva em ferramentas elétricas pesadas, lavadoras industriais e equipamentos de construção civil, além de locação e venda de peças.",
-    image: "category-tools",
+    image: "bosch-combo",
     highlights: [
       {
         title: "Atendimento para Construtoras e Empreiteiras",
@@ -355,7 +390,7 @@ export const serviceTabs: ServiceTab[] = [
       "Engenharia completa: do painel elétrico que protege sua bomba até a usinagem e coleta no seu endereço.",
     description:
       "Muitas queimas de motores e bombas acontecem por falha no quadro elétrico ou falta de proteção térmica. A BMF projeta, monta e reforma quadros de comando, executa serviços próprios de torno e solda e realiza visitas técnicas e coletas em todo o DF.",
-    image: "category-motors",
+    image: "elements/pilar-visita",
     highlights: [
       {
         title: "Quadros de Comando e Alternância",
@@ -399,7 +434,7 @@ export const services = [
     title: "Rebobinamento e Motores Elétricos",
     short: "Rebobinamento e Conserto",
     text: "Recuperação técnica e rebobinamento de motores elétricos monofásicos e trifásicos de todos os portes. Diagnóstico completo em bancada com testes de isolação e materiais de primeira linha.",
-    image: "copper",
+    image: "elements/pilar-oficina",
     items: [
       "Rebobinamento de motores elétricos em geral",
       "Diagnóstico elétrico, mecânico e testes de carga",
@@ -410,7 +445,7 @@ export const services = [
     title: "Ferramentas Elétricas e Máquinas Pesadas",
     short: "Ferramentas e Máquinas",
     text: "Conserto ágil de ferramentas elétricas industriais, máquinas de lavar alta pressão, enceradeiras industriais e motores vibradores para construção civil.",
-    image: "category-tools",
+    image: "bosch-combo",
     items: [
       "Furadeiras, lixadeiras e serras circulares",
       "Lavadoras de alta pressão e enceradeiras industriais",
@@ -421,7 +456,7 @@ export const services = [
     title: "Quadros de Comando e Automação",
     short: "Quadros e Automação",
     text: "Confecção, montagem e manutenção preventiva de painéis e quadros de comando elétrico. Proteção para sobrecarga, alternância automática de bombas e controle inteligente.",
-    image: "maintenance",
+    image: "elements/contrato-ciclo-motor",
     items: [
       "Confecção e reforma de quadros de comando elétrico",
       "Painéis de proteção e alternância de bombas",
@@ -432,7 +467,7 @@ export const services = [
     title: "Torno, Solda e Locação para Construção",
     short: "Usinagem e Locação",
     text: "Serviços próprios de torno mecânico, usinagem rápida e solda especializada para recuperação de eixos e carcaças, além de venda de peças e locação de equipamentos para obras.",
-    image: "category-motors",
+    image: "elements/pilar-visita",
     items: [
       "Serviços de torno mecânico e usinagem rápida",
       "Solda especializada para recuperação de eixos e carcaças",

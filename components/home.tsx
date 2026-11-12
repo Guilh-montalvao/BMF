@@ -62,10 +62,12 @@ const equipment = [
 export default function Home() {
   const root = useRef<HTMLDivElement>(null);
   const [selected, setSelected] = useState(0),
+    [activePillar, setActivePillar] = useState(0),
     [light, setLight] = useState(false),
     [district, setDistrict] = useState("");
   const reduced = useReducedMotion();
   const part = equipment[selected];
+  const currentPillar = differentiators[activePillar] || differentiators[0];
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -310,7 +312,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 2. Clientes Institucionais de Missão Crítica */}
+        {/* 2. Clientes Institucionais de Missão Crítica — Editorial Ledger (Sem Cards) */}
         <section className="clients-section" id="clientes">
           <Reveal className="clients-intro">
             <div className="clients-intro-left">
@@ -329,29 +331,27 @@ export default function Home() {
               </p>
             </div>
           </Reveal>
-          <Reveal className="clients-strip">
+          <Reveal className="clients-ledger">
             {clients.map((c, idx) => (
-              <div key={c.name} className="client-cell">
-                <div className="client-cell-top">
-                  <span className="client-index">0{idx + 1}</span>
-                  <span className="client-sector">{c.category}</span>
-                </div>
-                <div className="client-logo-box">
+              <div key={c.name} className="client-ledger-item">
+                <span className="client-ledger-num">0{idx + 1}</span>
+                <div className="client-ledger-logo">
                   {c.image ? (
                     <img src={c.image} alt={c.name} loading="lazy" />
                   ) : (
-                    <span className="client-gov-pill">
-                      <PartGlyph kind="shield" size={15} /> Governo Federal
+                    <span className="client-gov-mark">
+                      <PartGlyph kind="shield" size={16} /> Governo Federal
                     </span>
                   )}
                 </div>
-                <strong className="client-name">{c.name}</strong>
+                <strong className="client-ledger-name">{c.name}</strong>
+                <span className="client-ledger-sector">{c.category}</span>
               </div>
             ))}
           </Reveal>
         </section>
 
-        {/* 3. Contratos de Manutenção (Preventiva & Corretiva) + Sub-abas de Aprofundamento */}
+        {/* 3. Contratos & Engenharia BMF — Palco Técnico Interativo 3D (Zero Cards) */}
         <section className="why-choose-section" id="diferenciais">
           <Reveal className="why-header">
             <div>
@@ -362,86 +362,122 @@ export default function Home() {
               Unimos visitas técnicas em campo, manutenção preventiva programada e oficina própria completa em Samambaia para garantir operação contínua.
             </p>
           </Reveal>
-          <div className="why-layout">
-            <div className="why-pillars">
-              {differentiators.map((d) => (
-                <Reveal key={d.number} className="why-pillar">
-                  <div className="why-pillar-head">
-                    <span className="why-number">{d.number}</span>
-                    <h3>{d.title}</h3>
+
+          <div className="engineering-showcase">
+            {/* Coluna Esquerda: Pauta Técnica Interativa (Sem caixas/cards) */}
+            <div
+              className="showcase-index"
+              role="tablist"
+              aria-label="Pilares do Contrato e Engenharia BMF"
+            >
+              {differentiators.map((d, idx) => {
+                const isActive = idx === activePillar;
+                return (
+                  <div
+                    key={d.number}
+                    className={`showcase-row ${isActive ? "active" : ""}`}
+                    onMouseEnter={() => setActivePillar(idx)}
+                  >
+                    <button
+                      type="button"
+                      role="tab"
+                      aria-selected={isActive}
+                      className="showcase-row-trigger"
+                      onClick={() => setActivePillar(idx)}
+                    >
+                      <span className="showcase-row-num">{d.number}</span>
+                      <div className="showcase-row-titles">
+                        <span className="showcase-row-tag">{d.tag}</span>
+                        <h3>{d.title}</h3>
+                      </div>
+                      <img
+                        src={d.image}
+                        alt=""
+                        className="showcase-row-thumb"
+                        loading="lazy"
+                      />
+                    </button>
+                    <div className="showcase-row-expand">
+                      <p>{d.desc}</p>
+                      <Link href={d.ctaHref} className="showcase-row-link">
+                        {d.ctaLabel} <b>↳</b>
+                      </Link>
+                    </div>
                   </div>
-                  <p>{d.desc}</p>
-                </Reveal>
-              ))}
+                );
+              })}
             </div>
-            <Reveal className="field-team-card">
-              <div className="field-team-content">
-                <span className="field-team-tag">Modalidade Recorrente · B2B & Condomínios</span>
-                <h3>Contratos de Manutenção Preventiva e Corretiva</h3>
-                <p>
-                  Não espere a bomba principal queimar ou o motor parar a sua obra. Nossos contratos garantem inspeções periódicas in loco, relatórios técnicos e socorro prioritário para manter seus equipamentos sempre prontos.
-                </p>
-                <ul className="contract-card-list">
-                  <li>
-                    <Check size={14} />
-                    <span>Visitas técnicas programadas para revisão elétrica e mecânica</span>
-                  </li>
-                  <li>
-                    <Check size={14} />
-                    <span>Prioridade de atendimento e retirada em emergências corretivas</span>
-                  </li>
-                  <li>
-                    <Check size={14} />
-                    <span>Cobertura para motores, bombas, poços, quadros e ferramentas</span>
-                  </li>
-                </ul>
+
+            {/* Coluna Direita: Palco Escultural 3D Aberto (Blueprint Stage) */}
+            <div className="showcase-stage">
+              <div className="showcase-stage-top">
+                <span>BMF // ENGENHARIA DE MANUTENÇÃO</span>
+                <span>ITEM {currentPillar.number} / 05</span>
               </div>
-              <div className="field-team-actions">
-                <ButtonLink href="/servicos/?aba=contratos">
-                  Conhecer planos e contratos
-                </ButtonLink>
-                <a
-                  href={whatsapp(
-                    "Olá! Quero saber como funciona o Contrato de Manutenção Preventiva e Corretiva da BMF e agendar uma visita técnica.",
-                  )}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="field-team-link"
-                >
-                  Solicitar visita técnica <span>→</span>
-                </a>
+
+              <div className="showcase-stage-visual">
+                <div className="stage-blueprint-rings" aria-hidden="true" />
+                <AnimatePresence mode="wait">
+                  <motion.img
+                    key={currentPillar.image}
+                    src={currentPillar.image}
+                    alt={currentPillar.title}
+                    className="showcase-stage-render"
+                    initial={
+                      reduced
+                        ? false
+                        : { opacity: 0, y: 24, scale: 0.9, rotate: -3 }
+                    }
+                    animate={{ opacity: 1, y: 0, scale: 1, rotate: 0 }}
+                    exit={{ opacity: 0, y: -20, scale: 0.94, rotate: 2 }}
+                    transition={{ duration: 0.38, ease: [0.22, 1, 0.36, 1] }}
+                  />
+                </AnimatePresence>
               </div>
-            </Reveal>
+
+              <div className="showcase-stage-spec">
+                <div>
+                  <small>{currentPillar.specLabel}</small>
+                  <strong>{currentPillar.specValue}</strong>
+                </div>
+                <div className="showcase-stage-actions">
+                  <ButtonLink href="/servicos/?aba=contratos">
+                    Conhecer planos e contratos
+                  </ButtonLink>
+                  <a
+                    href={whatsapp(
+                      "Olá! Quero saber como funciona o Contrato de Manutenção Preventiva e Corretiva da BMF e agendar uma visita técnica.",
+                    )}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="showcase-stage-whatsapp"
+                  >
+                    Solicitar visita técnica <span>→</span>
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
 
-          {/* Atalhos diretos para aprofundar nas Sub-abas de Serviços */}
-          <Reveal className="home-subtabs-box">
-            <div className="home-subtabs-head">
-              <div>
-                <span className="home-subtabs-eyebrow">Aprofunde por especialidade</span>
-                <h3>Selecione uma sub-aba para ver o escopo técnico completo:</h3>
-              </div>
-              <Link href="/servicos/" className="inline-link">
-                Abrir central de serviços
-              </Link>
-            </div>
-            <div className="home-subtabs-grid">
+          {/* Índice Tipográfico Direto das Sub-abas (Sem caixas/cards) */}
+          <div className="specialty-index-strip">
+            <span className="specialty-index-label">
+              APROFUNDAR NAS SUB-ABAS DE SERVIÇO:
+            </span>
+            <nav className="specialty-index-links" aria-label="Sub-abas de especialidades">
               {serviceTabs.map((tab, i) => (
                 <Link
                   key={tab.id}
                   href={`/servicos/?aba=${tab.id}`}
-                  className="home-subtab-card"
+                  className="specialty-index-link"
                 >
-                  <span className="home-subtab-num">0{i + 1}</span>
-                  <strong>{tab.label}</strong>
-                  <small>{tab.subtitle}</small>
-                  <span className="home-subtab-cta">
-                    Ver detalhes técnicos <b>→</b>
-                  </span>
+                  <small>0{i + 1}</small>
+                  <span>{tab.label}</span>
+                  <b>↗</b>
                 </Link>
               ))}
-            </div>
-          </Reveal>
+            </nav>
+          </div>
         </section>
 
         {/* 4. Visita Técnica In Loco, Coleta e Entrega no DF */}
