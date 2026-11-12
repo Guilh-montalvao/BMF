@@ -477,49 +477,75 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ATO 2 — Autoridade de Missão Crítica com Elemento 3D Flutuante em Paralaxe */}
+        {/* ATO 2 — Autoridade de Missão Crítica com Parceria Técnica Mercosul & Órgãos Federais */}
         <section className="clients-section" id="clientes">
           <div className="clients-intro">
             <Reveal className="clients-intro-left">
-              <Eyebrow>Autoridade Comprovada em Ambientes Críticos</Eyebrow>
+              <div className="clients-badge-row">
+                <span className="clients-kicker">Autoridade Comprovada em Ambientes Críticos</span>
+                <span className="clients-partner-tag">
+                  <span className="partner-pulse" /> Parceiro Técnico Oficial Mercosul Motores
+                </span>
+              </div>
               <h2>
-                Você sabe o que acontece se a bomba de água de um hospital ou shopping parar por dez minutos?
+                Você sabe o que acontece se o sistema de bombeamento de um hospital ou shopping parar por dez minutos?
               </h2>
-            </Reveal>
-            <Reveal className="clients-intro-right">
-              <p>
-                <strong>Uma cirurgia é interrompida, lojas fecham as portas e um prédio inteiro entra em colapso.</strong>{" "}
-                Instituições desse porte não contratam oficinas improvisadas — elas exigem conformidade, engenharia preventiva e resposta imediata.
-              </p>
-              <p>
-                Quando você fecha um contrato ou serviço com a BMF Bombas, traz exatamente esse mesmo padrão de segurança para dentro do seu condomínio, construtora ou indústria.
+              <p className="clients-lead-text">
+                Uma cirurgia é interrompida, lojas fecham as portas e um prédio inteiro entra em colapso. Grandes operações não confiam em soluções improvisadas — exigem credibilidade de fábrica, conformidade com normas ABNT e prontidão técnica absoluta.
               </p>
             </Reveal>
-            <img
-              src="/images/elements/pilar-missao-critica.webp"
-              alt=""
-              aria-hidden="true"
-              className="clients-floating-emblem"
-              loading="lazy"
-            />
+
+            <Reveal className="clients-shield-card">
+              <div className="shield-card-glow" aria-hidden="true" />
+              <img
+                src="/images/elements/pilar-missao-critica.webp"
+                alt="Escudo de Missão Crítica e Proteção Operacional BMF"
+                className="clients-shield-visual"
+                loading="lazy"
+              />
+              <div className="shield-card-content">
+                <span className="shield-eyebrow">Padrão de Missão Crítica</span>
+                <strong>Segurança Homologada no DF</strong>
+                <p>
+                  A BMF une assistência e parceria técnica homologada com fabricantes de ponta, oficina própria em Samambaia e corpo técnico para visitas imediatas em todo o Distrito Federal.
+                </p>
+              </div>
+            </Reveal>
           </div>
 
-          <div className="clients-ledger">
-            {clients.map((c) => (
-              <div key={c.name} className="client-ledger-item">
-                <div className="client-ledger-logo">
-                  {c.image ? (
-                    <img src={c.image} alt={c.name} loading="lazy" />
-                  ) : (
-                    <span className="client-gov-mark">
-                      <PartGlyph kind="shield" size={16} /> Governo Federal
-                    </span>
+          <div className="clients-ledger-wrap">
+            <div className="clients-ledger-header">
+              <span className="ledger-header-label">HOMOLOGAÇÃO TÉCNICA, CLIENTES & PARCERIAS INDUSTRIAIS</span>
+              <span className="ledger-header-note">Desde 2009 mantendo Brasília em movimento</span>
+            </div>
+            <div className="clients-ledger">
+              {clients.map((c) => (
+                <div
+                  key={c.name}
+                  className={`client-ledger-item ${c.highlight ? "client-featured" : ""}`}
+                >
+                  <div className="client-ledger-logo">
+                    {c.image ? (
+                      <img
+                        src={c.image}
+                        alt={`Logomarca oficial ${c.name}`}
+                        className={c.name === "Ministério de Minas e Energia" ? "logo-mme" : c.name === "Mercosul Motores" ? "logo-mercosul" : ""}
+                        loading="lazy"
+                      />
+                    ) : (
+                      <span className="client-gov-mark">
+                        <PartGlyph kind="shield" size={16} /> Governo Federal
+                      </span>
+                    )}
+                  </div>
+                  {c.highlight && (
+                    <span className="client-highlight-tag">{c.highlight}</span>
                   )}
+                  <strong className="client-ledger-name">{c.name}</strong>
+                  <span className="client-ledger-sector">{c.category}</span>
                 </div>
-                <strong className="client-ledger-name">{c.name}</strong>
-                <span className="client-ledger-sector">{c.category}</span>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </section>
 

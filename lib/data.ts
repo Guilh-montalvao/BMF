@@ -133,9 +133,22 @@ export type Client = {
   category: string;
   image?: string;
   isGovernment?: boolean;
+  highlight?: string;
 };
 
 export const clients: Client[] = [
+  {
+    name: "Mercosul Motores",
+    category: "Parceiro Oficial & Fabricante Nacional",
+    image: "/images/mercosul.webp",
+    highlight: "Assistência e Parceria Técnica Autorizada",
+  },
+  {
+    name: "Ministério de Minas e Energia",
+    category: "Governo Federal · Esplanada dos Ministérios",
+    image: "/images/mme.webp",
+    isGovernment: true,
+  },
   {
     name: "Hospital HOME",
     category: "Complexo Hospitalar e Ortopédico DF",
@@ -160,11 +173,6 @@ export const clients: Client[] = [
     name: "Facilities & Condomínios",
     category: "Gestão Predial e Corporativa",
     image: "/images/clients/facilities.png",
-  },
-  {
-    name: "Ministério da Economia",
-    category: "Governo Federal / Órgão Público",
-    isGovernment: true,
   },
 ];
 
