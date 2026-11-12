@@ -361,75 +361,93 @@ export default function Home() {
 
         {/* Clientes Institucionais de Missão Crítica */}
         <section className="clients-section" id="clientes">
-          <Reveal className="clients-header">
-            <Eyebrow>Autoridade Institucional & Missão Crítica</Eyebrow>
-            <h2>A mesma engenharia que mantém as maiores operações de Brasília sem parar.</h2>
-            <div className="clients-pitch">
+          <Reveal className="clients-intro">
+            <div className="clients-intro-left">
+              <Eyebrow>Autoridade Institucional & Missão Crítica</Eyebrow>
+              <h2>
+                A mesma engenharia que mantém as maiores operações de Brasília sem parar.
+              </h2>
+            </div>
+            <div className="clients-intro-right">
               <p>
-                <strong>Você sabe o que acontece se o sistema de bombeamento de água de um grande hospital ou shopping falhar por dez minutos?</strong>
-                <br />
-                Uma cirurgia para, lojas fecham as portas e o prejuízo é incalculável. Essas instituições exigem velocidade absoluta de resposta, conformidade e zero margem para erro.
-                <br /><br />
-                Quando você contrata a BMF Bombas, traz para dentro do seu condomínio, empresa, indústria ou residência essa mesma confiabilidade técnica homologada pelos maiores nomes de Brasília.
+                <strong>Em hospitais, shoppings e órgãos federais, falha hidráulica ou elétrica não é um imprevisto — é risco operacional imediato.</strong>{" "}
+                Essas instituições exigem rigor técnico, velocidade de resposta e zero margem para erro.
+              </p>
+              <p>
+                Ao contratar a BMF Bombas, você leva para o seu condomínio, construtora, indústria ou residência o mesmo padrão de engenharia homologado pelas maiores estruturas do Distrito Federal.
               </p>
             </div>
           </Reveal>
-          <div className="clients-grid">
-            {clients.map((c) => (
-              <Reveal key={c.name} className="client-card">
-                <div className="client-logo-wrap">
+          <Reveal className="clients-strip">
+            {clients.map((c, idx) => (
+              <div key={c.name} className="client-cell">
+                <div className="client-cell-top">
+                  <span className="client-index">0{idx + 1}</span>
+                  <span className="client-sector">{c.category}</span>
+                </div>
+                <div className="client-logo-box">
                   {c.image ? (
                     <img src={c.image} alt={c.name} loading="lazy" />
                   ) : (
-                    <span className="client-gov-badge">
-                      <PartGlyph kind="shield" size={16} /> Órgão Público Federal
+                    <span className="client-gov-pill">
+                      <PartGlyph kind="shield" size={15} /> Governo Federal
                     </span>
                   )}
                 </div>
-                <strong>{c.name}</strong>
-                <span>{c.category}</span>
-              </Reveal>
+                <strong className="client-name">{c.name}</strong>
+              </div>
             ))}
-          </div>
+          </Reveal>
         </section>
 
         {/* Por que escolher a BMF & Equipe Técnica */}
         <section className="why-choose-section" id="diferenciais">
-          <Reveal>
-            <Eyebrow>Diferenciais BMF Bombas</Eyebrow>
-            <h2>Por que condomínios, construtoras e indústrias escolhem a BMF?</h2>
-          </Reveal>
-          <div className="why-grid">
-            {differentiators.map((d) => (
-              <Reveal key={d.number} className="why-card">
-                <span className="why-number">{d.number}</span>
-                <h3>{d.title}</h3>
-                <p>{d.desc}</p>
-              </Reveal>
-            ))}
-          </div>
-          <Reveal className="team-highlight">
+          <Reveal className="why-header">
             <div>
-              <Eyebrow>Segurança e Identificação em Campo</Eyebrow>
-              <h3>Técnicos Próprios e Padronizados para Atendimento no DF</h3>
-              <p>
-                Para atuar dentro de hospitais, condomínios ou canteiros de obras, identificação visual e segurança são prioridades. Nossa equipe atua uniformizada, equipada com EPIs e habilitada para diagnósticos e manutenções com total transparência e pontualidade.
-              </p>
-              <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
-                <ButtonLink href={whatsapp("Olá! Gostaria de agendar uma avaliação técnica com a equipe da BMF.")}>
-                  Falar com um técnico
-                </ButtonLink>
-                <ButtonLink href="/servicos/" secondary>
-                  Conhecer nossos serviços
-                </ButtonLink>
-              </div>
+              <Eyebrow>Diferenciais BMF Bombas</Eyebrow>
+              <h2>Por que condomínios, construtoras e indústrias escolhem a BMF?</h2>
             </div>
-            <img
-              src="/images/uniforme-tecnico.webp"
-              alt="Uniforme industrial BMF frente e verso — equipe técnica identificada"
-              loading="lazy"
-            />
+            <p>
+              Estrutura de oficina própria em Samambaia combinada com atendimento de campo ágil em todo o Distrito Federal.
+            </p>
           </Reveal>
+          <div className="why-layout">
+            <div className="why-pillars">
+              {differentiators.map((d) => (
+                <Reveal key={d.number} className="why-pillar">
+                  <div className="why-pillar-head">
+                    <span className="why-number">{d.number}</span>
+                    <h3>{d.title}</h3>
+                  </div>
+                  <p>{d.desc}</p>
+                </Reveal>
+              ))}
+            </div>
+            <Reveal className="field-team-card">
+              <div className="field-team-content">
+                <span className="field-team-tag">Segurança e Identificação em Campo</span>
+                <h3>Técnicos Próprios e Padronizados no DF</h3>
+                <p>
+                  Para atuar dentro de hospitais, condomínios e canteiros de obras, identificação visual e conformidade são inegociáveis. Nossa equipe atua uniformizada, com EPIs completos e frota pronta para retirada e instalação.
+                </p>
+                <div className="field-team-actions">
+                  <ButtonLink href={whatsapp("Olá! Gostaria de agendar uma avaliação técnica com a equipe da BMF.")}>
+                    Solicitar visita técnica
+                  </ButtonLink>
+                  <Link href="/servicos/" className="field-team-link">
+                    Ver escopo de serviços <span>→</span>
+                  </Link>
+                </div>
+              </div>
+              <div className="field-team-media">
+                <img
+                  src="/images/uniforme-tecnico.webp"
+                  alt="Uniforme industrial BMF frente e verso — equipe técnica identificada"
+                  loading="lazy"
+                />
+              </div>
+            </Reveal>
+          </div>
         </section>
 
         <section className="repair-story" id="manutencao">
@@ -476,10 +494,10 @@ export default function Home() {
                   display: "flex",
                   alignItems: "center",
                   gap: "14px",
-                  background: "#f0f5eb",
+                  background: "#f8fafc",
                   padding: "12px 16px",
                   borderRadius: "6px",
-                  border: "1px solid #c9d8c3",
+                  border: "1px solid #e2e8f0",
                 }}
               >
                 <img
@@ -488,7 +506,7 @@ export default function Home() {
                   style={{ width: "42px", height: "46px", objectFit: "contain" }}
                   loading="lazy"
                 />
-                <div style={{ fontSize: "11px", lineHeight: "1.5", color: "#3d5343" }}>
+                <div style={{ fontSize: "11px", lineHeight: "1.5", color: "#334155" }}>
                   <strong>Orçamento Técnico Transparente</strong>
                   <br />
                   Anotação minuciosa e laudo antes de qualquer execução.

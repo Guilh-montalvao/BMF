@@ -92,10 +92,10 @@ function FocusPanel({
         aria-modal="true"
         aria-label={label}
         className={`side-panel ${className}`}
-        initial={reduced ? false : { y: 70, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        exit={{ y: 70, opacity: 0 }}
-        transition={{ duration: 0.3, ease: [0.2, 0.7, 0.2, 1] }}
+        initial={reduced ? false : { x: "100%" }}
+        animate={{ x: 0 }}
+        exit={{ x: "100%" }}
+        transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1] }}
       >
         {children}
       </motion.aside>
@@ -315,10 +315,11 @@ export function Cart() {
                     Revisar seleção e continuar
                   </Link>
                   <button
-                    className="text-button"
+                    type="button"
+                    className="button button-secondary"
                     onClick={() => setOpen(false)}
                   >
-                    Voltar aos equipamentos
+                    Continuar comprando
                   </button>
                 </div>
               </>
@@ -327,7 +328,7 @@ export function Cart() {
         )}
       </AnimatePresence>
       <AnimatePresence>
-        {toast && (
+        {toast && !open && (
           <motion.div
             role="status"
             className="toast"
