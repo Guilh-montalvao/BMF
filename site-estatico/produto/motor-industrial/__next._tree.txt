@@ -1,5 +1,5 @@
-:HL["/_next/static/chunks/2nncdwa4e9haf.css","style"]
+:HL["/_next/static/chunks/2aisvz2-cg8ai.css","style"]
 3:[["children",{"s":"__PAGE__","h":160}]]
 2:[["children",{"s":{"n":"slug","t":"d","k":"motor-industrial","s":[]},"h":96,"c":"$Q3"}]]
 1:[["children",{"s":"produto","h":96,"c":"$Q2"}]]
-0:{"b":"pAc3aIUXRPUd8ctNuoLIe","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
+0:{"b":"N9YNp3_M21AbE-jL6IZDg","t":{"t":{"s":"","h":80,"c":"$Q1"}}}

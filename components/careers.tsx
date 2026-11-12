@@ -93,8 +93,7 @@ export default function Careers() {
 
         <div className="careers-grid">
           {areas.map((a) => (
-            <Reveal key={a.number} className="career-card">
-              <span className="why-number">{a.number}</span>
+            <Reveal key={a.title} className="career-card">
               <h3>{a.title}</h3>
               <p>{a.desc}</p>
             </Reveal>

@@ -332,9 +332,8 @@ export default function Home() {
             </div>
           </Reveal>
           <Reveal className="clients-ledger">
-            {clients.map((c, idx) => (
+            {clients.map((c) => (
               <div key={c.name} className="client-ledger-item">
-                <span className="client-ledger-num">0{idx + 1}</span>
                 <div className="client-ledger-logo">
                   {c.image ? (
                     <img src={c.image} alt={c.name} loading="lazy" />
@@ -364,7 +363,7 @@ export default function Home() {
           </Reveal>
 
           <div className="engineering-showcase">
-            {/* Coluna Esquerda: Pauta Técnica Interativa (Sem caixas/cards) */}
+            {/* Coluna Esquerda: Pauta Técnica Interativa */}
             <div
               className="showcase-index"
               role="tablist"
@@ -374,7 +373,7 @@ export default function Home() {
                 const isActive = idx === activePillar;
                 return (
                   <div
-                    key={d.number}
+                    key={d.title}
                     className={`showcase-row ${isActive ? "active" : ""}`}
                     onMouseEnter={() => setActivePillar(idx)}
                   >
@@ -385,7 +384,6 @@ export default function Home() {
                       className="showcase-row-trigger"
                       onClick={() => setActivePillar(idx)}
                     >
-                      <span className="showcase-row-num">{d.number}</span>
                       <div className="showcase-row-titles">
                         <span className="showcase-row-tag">{d.tag}</span>
                         <h3>{d.title}</h3>
@@ -408,13 +406,8 @@ export default function Home() {
               })}
             </div>
 
-            {/* Coluna Direita: Palco Escultural 3D Aberto (Blueprint Stage) */}
+            {/* Coluna Direita: Palco Escultural 3D Aberto */}
             <div className="showcase-stage">
-              <div className="showcase-stage-top">
-                <span>BMF // ENGENHARIA DE MANUTENÇÃO</span>
-                <span>ITEM {currentPillar.number} / 05</span>
-              </div>
-
               <div className="showcase-stage-visual">
                 <div className="stage-blueprint-rings" aria-hidden="true" />
                 <AnimatePresence mode="wait">
@@ -459,19 +452,18 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Índice Tipográfico Direto das Sub-abas (Sem caixas/cards) */}
+          {/* Índice Tipográfico Direto das Sub-abas */}
           <div className="specialty-index-strip">
             <span className="specialty-index-label">
-              APROFUNDAR NAS SUB-ABAS DE SERVIÇO:
+              Aprofundar por área de serviço:
             </span>
             <nav className="specialty-index-links" aria-label="Sub-abas de especialidades">
-              {serviceTabs.map((tab, i) => (
+              {serviceTabs.map((tab) => (
                 <Link
                   key={tab.id}
                   href={`/servicos/?aba=${tab.id}`}
                   className="specialty-index-link"
                 >
-                  <small>0{i + 1}</small>
                   <span>{tab.label}</span>
                   <b>↗</b>
                 </Link>
@@ -531,19 +523,19 @@ export default function Home() {
           <div className="collection-bottom">
             <div className="collection-steps">
               <div>
-                <span>1. Visita Técnica & Coleta</span>
+                <span>Visita Técnica & Coleta</span>
                 <p>
                   Vamos até o seu endereço avaliar o problema in loco e retirar a bomba, motor ou ferramenta com segurança.
                 </p>
               </div>
               <div>
-                <span>2. Laudo na Oficina</span>
+                <span>Laudo na Oficina</span>
                 <p>
                   Desmontagem, diagnóstico técnico detalhado e orçamento transparente antes da execução.
                 </p>
               </div>
               <div>
-                <span>3. Entrega & Instalação</span>
+                <span>Entrega & Instalação</span>
                 <p>
                   Devolvemos o equipamento revisado, testado em bancada e pronto para operar sem falhas.
                 </p>

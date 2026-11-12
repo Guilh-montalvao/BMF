@@ -37,7 +37,7 @@ function ServicesTabsInner() {
         role="tablist"
         aria-label="Sub-abas de serviços da BMF"
       >
-        {serviceTabs.map((tab, idx) => {
+        {serviceTabs.map((tab) => {
           const isActive = tab.id === current.id;
           return (
             <button
@@ -49,7 +49,6 @@ function ServicesTabsInner() {
               className={`service-tab-button ${isActive ? "active" : ""}`}
               onClick={() => setActiveTab(tab.id)}
             >
-              <span className="service-tab-idx">0{idx + 1}</span>
               <span className="service-tab-label">{tab.label}</span>
             </button>
           );
@@ -119,9 +118,8 @@ function ServicesTabsInner() {
 
         {/* Pilares detalhados da Sub-aba */}
         <div className="service-tab-highlights">
-          {current.highlights.map((h, i) => (
+          {current.highlights.map((h) => (
             <div key={h.title} className="service-highlight-card">
-              <span className="service-highlight-num">0{i + 1}</span>
               <h4>{h.title}</h4>
               <p>{h.text}</p>
             </div>
