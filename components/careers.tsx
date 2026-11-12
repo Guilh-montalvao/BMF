@@ -1,35 +1,82 @@
 "use client";
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { motion } from "motion/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ArrowLeft, ArrowUpRight, Check, MessageCircle } from "./glyphs";
 import { ButtonLink, Eyebrow, Reveal } from "./ui";
 import { whatsapp, COMPANY_ADDRESS } from "@/lib/data";
 
 const areas = [
   {
-    number: "01",
+    tag: "BANCADA DE COBRE & ISOLAMENTO",
     title: "Rebobinador de Motores Elétricos",
-    desc: "Rebobinamento de motores monofásicos e trifásicos, ligação de esquemas elétricos, testes de isolação e montagem em bancada.",
+    desc: "Rebobinamento de motores monofásicos e trifásicos, ligação de esquemas elétricos, testes de isolação (megôhmetro), impregnação e montagem em bancada.",
+    image: "/images/elements/pilar-oficina.webp",
   },
   {
-    number: "02",
+    tag: "CAMPO & CASA DE BOMBAS",
     title: "Técnico de Motobombas e Poços Artesianos",
-    desc: "Manutenção de bombas centrífugas, pressurizadores, bombas submersas, visitas técnicas em condomínios/hospitais e retirada em poços.",
+    desc: "Manutenção de bombas centrífugas, pressurizadores, bombas submersas, visitas técnicas em condomínios/hospitais e retirada técnica em poços.",
+    image: "/images/elements/pilar-visita.webp",
   },
   {
-    number: "03",
+    tag: "CANTEIROS & FROTAS INDUSTRIAIS",
     title: "Técnico em Ferramentas Elétricas e Máquinas",
     desc: "Diagnóstico e conserto de marteletes, furadeiras, esmerilhadeiras, serras, lavadoras de alta pressão e motores vibradores.",
+    image: "/images/bosch-combo.webp",
   },
   {
-    number: "04",
+    tag: "USINAGEM, PAINÉIS & LOGÍSTICA",
     title: "Torneiro Mecânico / Quadros / Auxiliar Técnico",
     desc: "Usinagem de eixos e buchas, montagem de quadros de comando elétrico, logística de coleta/entrega e apoio operacional na oficina.",
+    image: "/images/elements/pilar-contratos.webp",
   },
 ];
 
 export default function Careers() {
   const [message, setMessage] = useState("");
+  const root = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        ".careers-uniform-showcase img",
+        { y: 24, rotate: -3, scale: 0.96 },
+        {
+          y: -28,
+          rotate: 2,
+          scale: 1.04,
+          ease: "none",
+          scrollTrigger: {
+            trigger: ".careers-hero",
+            start: "top bottom",
+            end: "bottom top",
+            scrub: 0.8,
+          },
+        },
+      );
+
+      gsap.from(".career-card", {
+        y: 36,
+        opacity: 0,
+        stagger: 0.12,
+        duration: 0.75,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: ".careers-grid",
+          start: "top 82%",
+        },
+      });
+    }, root);
+
+    return () => ctx.revert();
+  }, []);
 
   const submit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -40,7 +87,7 @@ export default function Careers() {
   };
 
   return (
-    <main id="conteudo" className="careers-page">
+    <main ref={root} id="conteudo" className="careers-page">
       <div className="subpage-top-nav">
         <Link href="/" className="back-link">
           <ArrowLeft size={16} />
@@ -49,13 +96,18 @@ export default function Careers() {
       </div>
 
       <section className="careers-hero">
-        <div className="careers-hero-copy">
+        <motion.div
+          className="careers-hero-copy"
+          initial={{ opacity: 0, y: 26 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+        >
           <Eyebrow>Carreiras & Equipe Técnica · Samambaia / DF</Eyebrow>
           <h1>
             Vista a camisa de quem mantém Brasília funcionando.
           </h1>
           <p>
-            Há mais de 17 anos a BMF Bombas (Eletro Ivo) é referência em manutenção eletromecânica no Distrito Federal. Nossa equipe atua uniformizada, com segurança, oficina estruturada e orgulho de atender desde residências até os maiores hospitais, shoppings e órgãos públicos de Brasília.
+            Há mais de 17 anos a BMF Bombas (Eletro Ivo) é referência em engenharia de manutenção eletromecânica no Distrito Federal. Nossa equipe atua uniformizada, com segurança, oficina própria completa e orgulho de atender desde residências até os maiores hospitais, shoppings e órgãos públicos de Brasília.
           </p>
           <div className="careers-hero-badges">
             <span><Check size={14} /> Oficina própria em Samambaia</span>
@@ -70,14 +122,20 @@ export default function Careers() {
               Conhecer áreas de atuação
             </ButtonLink>
           </div>
-        </div>
+        </motion.div>
 
-        <div className="careers-uniform-showcase">
+        <motion.div
+          className="careers-uniform-showcase"
+          initial={{ opacity: 0, scale: 0.9, rotate: -4 }}
+          animate={{ opacity: 1, scale: 1, rotate: 0 }}
+          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
+        >
+          <div className="stage-blueprint-rings" aria-hidden="true" />
           <img
             src="/images/uniforme-tecnico.webp"
             alt="Uniforme oficial da equipe técnica BMF Bombas frente e verso"
           />
-        </div>
+        </motion.div>
       </section>
 
       <section className="careers-areas">
@@ -93,10 +151,12 @@ export default function Careers() {
 
         <div className="careers-grid">
           {areas.map((a) => (
-            <Reveal key={a.title} className="career-card">
+            <div key={a.title} className="career-card">
+              <img src={a.image} alt="" className="mode-3d-img" />
+              <span className="mode-tag">{a.tag}</span>
               <h3>{a.title}</h3>
               <p>{a.desc}</p>
-            </Reveal>
+            </div>
           ))}
         </div>
       </section>
@@ -214,4 +274,3 @@ export default function Careers() {
     </main>
   );
 }
-

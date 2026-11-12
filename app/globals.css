@@ -975,13 +975,17 @@ small {
   padding: 80px 40px 72px;
   background: #ffffff;
   border-bottom: 1px solid #e2e8f0;
+  overflow: hidden;
 }
 .clients-intro {
   display: grid;
-  grid-template-columns: 1.05fr 1fr;
+  grid-template-columns: 1.15fr 1fr;
   gap: 56px;
-  align-items: end;
+  align-items: center;
   margin-bottom: 56px;
+}
+.clients-intro-left {
+  position: relative;
 }
 .clients-intro-left h2 {
   font-family: var(--display);
@@ -990,6 +994,14 @@ small {
   letter-spacing: -1.1px;
   color: var(--navy);
   margin: 14px 0 0;
+  max-width: 520px;
+}
+.clients-floating-emblem {
+  width: 96px;
+  height: 96px;
+  object-fit: contain;
+  margin-top: 22px;
+  filter: drop-shadow(0 16px 24px rgba(15, 23, 42, 0.14));
 }
 .clients-intro-right {
   border-left: 2px solid var(--blue);
@@ -1098,6 +1110,7 @@ small {
   align-items: stretch;
   border-top: 2px solid var(--navy);
   padding-top: 12px;
+  background: #ffffff;
 }
 .showcase-index {
   display: flex;
@@ -1169,11 +1182,8 @@ small {
   transform: scale(1.06);
 }
 .showcase-row-expand {
-  display: none;
+  overflow: hidden;
   padding: 12px 56px 4px 0;
-}
-.showcase-row.active .showcase-row-expand {
-  display: block;
 }
 .showcase-row-expand p {
   font-size: 13px;
@@ -1237,6 +1247,27 @@ small {
   border-radius: 50%;
   border: 1px solid #f1f5f9;
 }
+.stage-floating-pill {
+  position: absolute;
+  z-index: 3;
+  font: 600 9px/1 var(--mono);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 6px 10px;
+  border-left: 2px solid var(--blue);
+  color: var(--navy);
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(4px);
+  pointer-events: none;
+}
+.pill-top-left {
+  top: 12px;
+  left: 0;
+}
+.pill-bottom-right {
+  bottom: 14px;
+  right: 0;
+}
 .showcase-stage-render {
   position: relative;
   z-index: 2;
@@ -1286,6 +1317,40 @@ small {
 .showcase-stage-whatsapp:hover {
   color: var(--blue);
   border-color: var(--blue);
+}
+
+/* Open Editorial Floating Notebook Row inside .repair-story */
+.repair-notebook-row {
+  margin-top: 32px;
+  padding-top: 22px;
+  border-top: 1px solid #cbd5e1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+.repair-notebook-float {
+  width: 78px;
+  height: 88px;
+  object-fit: contain;
+  flex-shrink: 0;
+  filter: drop-shadow(0 14px 22px rgba(15, 23, 42, 0.16));
+}
+.repair-notebook-copy {
+  flex: 1;
+}
+.repair-notebook-copy small {
+  display: block;
+  font: 600 9.5px/1 var(--mono);
+  color: var(--blue);
+  letter-spacing: 0.5px;
+  margin-bottom: 5px;
+}
+.repair-notebook-copy p {
+  font-size: 13px;
+  line-height: 1.65;
+  color: #334155;
+  margin: 0;
 }
 
 /* Open Architectural Index Bar for Sub-tabs (Zero Cards) */
@@ -1341,6 +1406,12 @@ small {
 }
 
 /* Services Page Sub-tabs & Modes — Open Editorial Layout */
+.service-page-3d-stage {
+  position: relative;
+  min-height: 340px;
+  display: grid;
+  place-items: center;
+}
 .services-subtabs-section {
   padding: 64px 40px;
   background: #ffffff;
@@ -1402,8 +1473,7 @@ small {
   color: var(--navy);
   background: #f8fafc;
 }
-.service-tab-button.active:after {
-  content: "";
+.service-tab-active-line {
   position: absolute;
   left: 0;
   right: 0;
@@ -1502,14 +1572,17 @@ small {
   gap: 24px;
 }
 .service-tab-image-box {
+  position: relative;
   background: transparent;
   padding: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 300px;
+  min-height: 320px;
 }
 .service-tab-image-box img {
+  position: relative;
+  z-index: 2;
   width: 100%;
   max-height: 310px;
   object-fit: contain;
@@ -1617,6 +1690,20 @@ small {
   padding-left: 32px;
   padding-right: 0;
 }
+.mode-3d-img {
+  height: 104px;
+  width: auto;
+  max-width: 140px;
+  object-fit: contain;
+  align-self: flex-start;
+  margin-bottom: 18px;
+  filter: drop-shadow(0 14px 22px rgba(15, 23, 42, 0.14));
+  transition: transform 0.3s ease;
+}
+.mode-card:hover .mode-3d-img,
+.career-card:hover .mode-3d-img {
+  transform: translateY(-6px) scale(1.05);
+}
 .mode-tag {
   font: 600 10px/1 var(--mono);
   text-transform: uppercase;
@@ -1714,13 +1801,17 @@ small {
   color: var(--blue);
 }
 .careers-uniform-showcase {
+  position: relative;
   background: transparent;
   padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  min-height: 360px;
 }
 .careers-uniform-showcase img {
+  position: relative;
+  z-index: 2;
   width: 100%;
   max-height: 360px;
   object-fit: contain;
@@ -2245,16 +2336,6 @@ small {
   border-top: 2px solid #cbd5e1;
   padding-top: 12px;
   position: relative;
-}
-.collection-steps > div:before {
-  content: "";
-  position: absolute;
-  top: -4px;
-  left: 0;
-  width: 6px;
-  height: 6px;
-  background: var(--blue);
-  border-radius: 50%;
 }
 .collection-steps span {
   font-size: 12px;

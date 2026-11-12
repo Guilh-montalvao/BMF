@@ -30,7 +30,7 @@ export default function Page() {
             Motores, Bombas e Ferramentas.
           </h1>
           <p>
-            Atuamos com contratos de manutenção preventiva e corretiva, visitas técnicas in loco e reparos especializados em nossa oficina própria em Samambaia. A mesma engenharia que mantém grandes hospitais, shoppings e órgãos públicos funcionando sem parar.
+            Não espere o motor queimar ou o abastecimento parar para agir. Estruturamos contratos de manutenção preventiva e corretiva, visitas técnicas in loco e reparos em oficina própria em Samambaia — com a mesma engenharia que mantém os maiores hospitais, shoppings e órgãos federais de Brasília operando sem interrupções.
           </p>
           <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
             <ButtonLink href="#especialidades">
@@ -46,10 +46,14 @@ export default function Page() {
             </ButtonLink>
           </div>
         </div>
-        <img
-          src="/images/maintenance.webp"
-          alt="Bancada de manutenção eletromecânica da BMF Bombas"
-        />
+        <div className="service-page-3d-stage">
+          <div className="stage-blueprint-rings" aria-hidden="true" />
+          <img
+            src="/images/elements/contrato-ciclo-motor.webp"
+            alt="Ciclo de manutenção preventiva e corretiva de motores e bombas BMF"
+            className="showcase-stage-render"
+          />
+        </div>
       </section>
 
       {/* Sistema de Sub-abas Interativas + Comparativo Preventiva/Corretiva/Contrato */}
@@ -59,11 +63,11 @@ export default function Page() {
         <Reveal>
           <Eyebrow>Proposta de Contrato, Visita Técnica ou Orçamento</Eyebrow>
           <h2>
-            Como podemos atender
+            Como podemos blindar
             <br />a sua operação hoje?
           </h2>
           <p>
-            Solicite uma visita técnica para avaliarmos o seu problema no local, peça uma proposta de contrato preventivo/corretivo ou descreva o equipamento que precisa de reparo.
+            Solicite uma visita técnica para avaliarmos o seu sistema no local, peça uma proposta de contrato preventivo/corretivo ou descreva o equipamento que precisa de reparo na bancada.
           </p>
           <ButtonLink href="/#coleta" secondary className="request-coleta-link">
             Ver como funciona a Visita e Coleta no DF
