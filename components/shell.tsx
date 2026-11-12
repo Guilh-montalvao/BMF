@@ -10,7 +10,6 @@ import {
   products,
   whatsapp,
   mapUrl,
-  PHONE_LANDLINE,
   PHONE_WHATSAPP,
   COMPANY_ADDRESS,
   COMPANY_CEP,
@@ -362,7 +361,6 @@ export function Footer() {
           Especialistas em bombas d’água, poços e motores elétricos.
         </p>
         <div className="footer-phones">
-          <a href="tel:+556134583929">(61) 3458-3929</a>
           <a
             href={whatsapp("Olá! Preciso de atendimento da BMF Bombas.")}
             target="_blank"
@@ -382,7 +380,7 @@ export function Footer() {
           >
             Conversar no WhatsApp
           </a>
-          <a href="tel:+556134583929">Oficina: (61) 3458-3929</a>
+          <a href="tel:+5561996971240">Telefone: (61) 99697-1240</a>
           <a
             href="https://www.instagram.com/bmf_bombas/"
             target="_blank"
@@ -433,6 +431,25 @@ export function Footer() {
           Voltar ao começo ↑
         </button>
       </div>
+      <a
+        href={whatsapp("Olá! Gostaria de falar com a equipe técnica da BMF Bombas.")}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="whatsapp-float"
+        aria-label="Falar com a BMF no WhatsApp"
+        title="Falar no WhatsApp: (61) 99697-1240"
+      >
+        <svg
+          width="28"
+          height="28"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          aria-hidden="true"
+        >
+          <path d="M12.031 2c-5.516 0-9.999 4.486-9.999 10.004 0 1.766.461 3.49 1.337 5.01L2 22l5.122-1.343a9.957 9.957 0 0 0 4.906 1.292h.004c5.515 0 9.998-4.486 9.998-10.004 0-2.673-1.04-5.186-2.928-7.075A9.936 9.936 0 0 0 12.031 2zm5.828 14.298c-.246.693-1.434 1.326-1.988 1.409-.508.075-1.15.107-1.856-.117-.428-.136-.977-.318-1.681-.622-2.959-1.277-4.891-4.258-5.039-4.455-.147-.197-1.203-1.601-1.203-3.054 0-1.453.761-2.167 1.031-2.463.271-.296.59-.37.787-.37.197 0 .393.002.565.01.181.009.424-.069.663.507.246.591.835 2.045.909 2.193.074.148.123.32.025.517-.098.197-.148.32-.295.493-.147.172-.31.385-.442.517-.148.148-.302.309-.13.605.172.295.764 1.261 1.641 2.043 1.127 1.005 2.078 1.317 2.373 1.465.295.148.467.123.639-.074.172-.197.737-.862.934-1.158.197-.295.393-.246.664-.148.271.099 1.721.813 2.016.961.295.148.492.222.566.345.073.123.073.714-.173 1.407z" />
+        </svg>
+        <span className="whatsapp-float-label">WhatsApp</span>
+      </a>
     </footer>
   );
 }

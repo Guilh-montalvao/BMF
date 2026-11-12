@@ -600,14 +600,9 @@ export default function Home() {
               <br />
               Ou chamar nossa equipe até você.
             </h2>
-            <div style={{ display: "flex", flexDirection: "column", gap: "6px", margin: "14px 0" }}>
-              <a className="desk-phone" href="tel:+556134583929">
-                <span>61</span>3458–3929
-              </a>
-              <a className="desk-phone" href="tel:+5561996971240">
-                <span>61</span>99697–1240
-              </a>
-            </div>
+            <a className="desk-phone" href="tel:+5561996971240">
+              <span>61</span>99697–1240
+            </a>
             <div className="desk-address">
               <p>
                 Quadra ADE Sul, Conjunto 06, Lote 06

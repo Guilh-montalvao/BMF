@@ -1752,33 +1752,54 @@ small {
   color: var(--blue);
 }
 .careers-uniform-showcase {
-  background: var(--navy);
-  color: #ffffff;
-  border-radius: 12px;
-  padding: 32px;
+  background: transparent;
+  padding: 0;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  text-align: center;
-  gap: 18px;
-}
-.uniform-badge {
-  font: 600 10px/1 var(--mono);
-  text-transform: uppercase;
-  letter-spacing: 0.7px;
-  color: var(--yellow);
+  justify-content: center;
 }
 .careers-uniform-showcase img {
   width: 100%;
-  max-height: 260px;
+  max-height: 360px;
   object-fit: contain;
+  filter: drop-shadow(0 18px 28px rgba(15, 23, 42, 0.1));
 }
-.careers-uniform-showcase p {
-  font-size: 12px;
-  line-height: 1.6;
-  color: #cbd5e1;
-  margin: 0;
-  max-width: 360px;
+
+/* Floating WhatsApp Button (Bottom Right) */
+.whatsapp-float {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 92;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #25d366;
+  color: #ffffff;
+  padding: 13px 20px 13px 16px;
+  border-radius: 999px;
+  font: 600 13px/1 var(--sans);
+  box-shadow: 0 10px 28px rgba(37, 211, 102, 0.38), 0 4px 10px rgba(15, 23, 42, 0.14);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+.whatsapp-float:hover {
+  background: #1ebe5b;
+  transform: translateY(-3px);
+  box-shadow: 0 14px 34px rgba(37, 211, 102, 0.48), 0 6px 14px rgba(15, 23, 42, 0.18);
+}
+.whatsapp-float svg {
+  flex-shrink: 0;
+}
+@media (max-width: 700px) {
+  .whatsapp-float {
+    bottom: 18px;
+    right: 18px;
+    padding: 14px;
+    border-radius: 50%;
+  }
+  .whatsapp-float-label {
+    display: none;
+  }
 }
 .careers-areas {
   padding: 70px 40px;

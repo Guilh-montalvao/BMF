@@ -73,14 +73,10 @@ export default function Careers() {
         </div>
 
         <div className="careers-uniform-showcase">
-          <span className="uniform-badge">Identidade Oficial BMF</span>
           <img
             src="/images/uniforme-tecnico.webp"
             alt="Uniforme oficial da equipe técnica BMF Bombas frente e verso"
           />
-          <p>
-            Padronização, identificação visual e respeito ao profissional em cada visita técnica e bancada.
-          </p>
         </div>
       </section>
 

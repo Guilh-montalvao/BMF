@@ -1,6 +1,4 @@
 export const WHATSAPP = "https://wa.me/5561996971240";
-export const PHONE_LANDLINE = "(61) 3458-3929";
-export const PHONE_LANDLINE_RAW = "+556134583929";
 export const PHONE_WHATSAPP = "(61) 99697-1240";
 export const COMPANY_NAME = "BMF Comércio de Bombas";
 export const COMPANY_LEGAL_NAME =

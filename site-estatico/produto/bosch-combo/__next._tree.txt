@@ -1,5 +1,5 @@
-:HL["/_next/static/chunks/1drnrx9g-6yqq.css","style"]
+:HL["/_next/static/chunks/0hz78kyfjp8si.css","style"]
 3:[["children",{"s":"__PAGE__","h":160}]]
 2:[["children",{"s":{"n":"slug","t":"d","k":"bosch-combo","s":[]},"h":96,"c":"$Q3"}]]
 1:[["children",{"s":"produto","h":96,"c":"$Q2"}]]
-0:{"b":"JOtYaQO27xnnDhheTcgKl","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
+0:{"b":"JT42YDnUrsQG-hMD-bm7q","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
