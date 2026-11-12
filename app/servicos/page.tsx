@@ -1,10 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Check, ArrowLeft } from "@/components/glyphs";
-import { services, whatsapp } from "@/lib/data";
+import { ArrowLeft } from "@/components/glyphs";
+import { whatsapp } from "@/lib/data";
 import { ButtonLink, Eyebrow, Reveal } from "@/components/ui";
 import ServiceRequest from "@/components/service-request";
-export const metadata: Metadata = { title: "Oficina e manutenção" };
+import ServicesTabs from "@/components/services-tabs";
+
+export const metadata: Metadata = {
+  title: "Contratos e Serviços de Manutenção | BMF Bombas",
+};
+
 export default function Page() {
   return (
     <main id="conteudo" className="services-page">
@@ -16,77 +21,52 @@ export default function Page() {
       </div>
       <section className="service-page-heading">
         <div>
-          <Eyebrow>Oficina Especializada · 17+ Anos no Distrito Federal</Eyebrow>
+          <Eyebrow>
+            Contratos Preventivos & Corretivos · Oficina Própria · 17+ Anos no DF
+          </Eyebrow>
           <h1>
-            Manutenção de Bombas,
+            Contratos de Manutenção,
             <br />
-            Poços e Motores Elétricos.
+            Motores, Bombas e Ferramentas.
           </h1>
           <p>
-            Do conserto emergencial à manutenção preventiva. Atendimento ágil
-            com oficina própria em Samambaia, torno, solda, retirada de poço
-            artesiano e a mesma engenharia que mantém hospitais e shoppings
-            funcionando sem parar.
+            Atuamos com contratos de manutenção preventiva e corretiva, visitas técnicas in loco e reparos especializados em nossa oficina própria em Samambaia. A mesma engenharia que mantém grandes hospitais, shoppings e órgãos públicos funcionando sem parar.
           </p>
-          <ButtonLink href="#solicitar">
-            Conversar sobre meu equipamento
-          </ButtonLink>
+          <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
+            <ButtonLink href="#especialidades">
+              Explorar sub-abas de serviço
+            </ButtonLink>
+            <ButtonLink
+              href={whatsapp(
+                "Olá! Gostaria de agendar uma visita técnica ou solicitar proposta de Contrato de Manutenção com a BMF.",
+              )}
+              secondary
+            >
+              Agendar visita técnica
+            </ButtonLink>
+          </div>
         </div>
         <img
           src="/images/maintenance.webp"
-          alt="Cena ilustrativa de um motor desmontado na bancada"
+          alt="Bancada de manutenção eletromecânica da BMF Bombas"
         />
       </section>
-      <div className="service-directory">
-        {services.map((s, i) => (
-          <section key={s.title} className="service-detail" id={`servico-${i}`}>
-            <Reveal className="service-detail-visual">
-              <img
-                src={`/images/${s.image}.webp`}
-                alt={`Imagem ilustrativa: ${s.title.toLowerCase()}`}
-                loading="lazy"
-              />
-            </Reveal>
-            <Reveal className="service-detail-copy">
-              <Eyebrow>{s.short}</Eyebrow>
-              <h2>{s.title}</h2>
-              <p>{s.text}</p>
-              <ul>
-                {s.items.map((item) => (
-                  <li key={item}>
-                    <Check size={12} />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <a
-                className="text-link"
-                href={whatsapp(
-                  `Olá! Preciso de atendimento sobre ${s.title.toLowerCase()}.`,
-                )}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Falar com a oficina sobre este serviço
-              </a>
-            </Reveal>
-          </section>
-        ))}
-      </div>
+
+      {/* Sistema de Sub-abas Interativas + Comparativo Preventiva/Corretiva/Contrato */}
+      <ServicesTabs />
+
       <section className="service-request" id="solicitar">
         <Reveal>
-          <Eyebrow>Vamos começar por uma conversa.</Eyebrow>
+          <Eyebrow>Proposta de Contrato, Visita Técnica ou Orçamento</Eyebrow>
           <h2>
-            Que equipamento
-            <br />
-            precisa de cuidado?
+            Como podemos atender
+            <br />a sua operação hoje?
           </h2>
           <p>
-            Conte o que aconteceu e onde o equipamento está. O formulário
-            prepara uma mensagem para você conversar com a BMF no WhatsApp.
+            Solicite uma visita técnica para avaliarmos o seu problema no local, peça uma proposta de contrato preventivo/corretivo ou descreva o equipamento que precisa de reparo.
           </p>
           <ButtonLink href="/#coleta" secondary className="request-coleta-link">
-            Como funciona a coleta?
+            Ver como funciona a Visita e Coleta no DF
           </ButtonLink>
         </Reveal>
         <ServiceRequest />

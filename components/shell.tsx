@@ -108,10 +108,11 @@ export function Header() {
   const { count, setOpen } = useStore();
   useEffect(() => setMenu(false), [path]);
   const links = [
+    { href: "/servicos/", label: "Serviços", kind: "tools" as const },
     { href: "/loja/", label: "Loja", kind: "basket" as const },
-    { href: "/servicos/", label: "Oficina", kind: "tools" as const },
-    { href: "/#coleta", label: "Coleta", kind: "truck" as const },
+    { href: "/#coleta", label: "Visita & Coleta", kind: "truck" as const },
     { href: "/#contato", label: "Onde estamos", kind: "pin" as const },
+    { href: "/trabalhe-conosco/", label: "Carreiras", kind: "shield" as const },
   ];
   return (
     <>
@@ -404,12 +405,12 @@ export function Footer() {
           </p>
         </div>
         <div>
-          <span>Equipamentos & Serviços</span>
-          <Link href="/servicos/">Bombas d’Água & Poços Artesianos</Link>
-          <Link href="/servicos/">Rebobinamento & Motores</Link>
-          <Link href="/servicos/">Quadros de Comando & Automação</Link>
-          <Link href="/loja/">Comprar equipamentos e peças</Link>
-          <Link href="/#coleta">Coleta e entrega em todo o DF</Link>
+          <span>Contratos & Especialidades</span>
+          <Link href="/servicos/?aba=contratos">Contratos: Preventiva & Corretiva</Link>
+          <Link href="/servicos/?aba=motores">Motores Elétricos & Rebobinamento</Link>
+          <Link href="/servicos/?aba=bombas">Motobombas & Poços Artesianos</Link>
+          <Link href="/servicos/?aba=ferramentas">Ferramentas Elétricas & Obras</Link>
+          <Link href="/trabalhe-conosco/">Trabalhe Conosco (Vagas & Equipe)</Link>
         </div>
       </div>
       <div className="footer-bottom">

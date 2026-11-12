@@ -173,23 +173,215 @@ export const clients: Client[] = [
 export const differentiators = [
   {
     number: "01",
-    title: "Mais de 17 Anos no DF",
-    desc: "Fundada em 2009 em Samambaia, a BMF possui tradição sólida conhecendo a fundo as demandas de água, poços artesianos e motores de Brasília.",
+    title: "Contratos Preventivos & Corretivos",
+    desc: "Planos sob medida para condomínios, hospitais, indústrias e construtoras evitarem paradas inesperadas e reduzirem custos com queimas de equipamentos.",
   },
   {
     number: "02",
-    title: "Atendimento Ágil / Zero Downtime",
-    desc: "Em hospitais, condomínios ou canteiros de obra, parada de água é prejuízo imediato. Nossa estrutura atua rápido para restabelecer a operação.",
+    title: "Visita Técnica In Loco no DF",
+    desc: "Nossa equipe vai até o cliente para inspecionar a casa de bombas, poço artesiano ou quadro elétrico, entender a causa raiz do problema e propor a solução exata.",
   },
   {
     number: "03",
-    title: "Solução Completa e Oficina Própria",
-    desc: "Do diagnóstico in loco, retirada e reinstalação no poço artesiano até rebobinamento em oficina própria, torno, solda, quadros e peças à pronta entrega.",
+    title: "Oficina Própria Completa (+17 Anos)",
+    desc: "Sede própria em Samambaia com bancada de rebobinamento, torno mecânico, solda, montagem de painéis e estoque de peças para resposta imediata.",
   },
   {
     number: "04",
     title: "Padrão de Missão Crítica",
-    desc: "A mesma engenharia e rigor técnico homologados por grandes nomes de Brasília levados para o seu condomínio ou empresa com total transparência.",
+    desc: "A mesma engenharia e velocidade de resposta homologadas por grandes hospitais, shoppings e órgãos federais aplicadas ao seu negócio.",
+  },
+];
+
+export type ServiceTab = {
+  id: string;
+  label: string;
+  badge: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  image: string;
+  highlights: { title: string; text: string }[];
+  checklist: string[];
+  ctaText: string;
+  whatsappPrompt: string;
+};
+
+export const serviceTabs: ServiceTab[] = [
+  {
+    id: "contratos",
+    label: "Contratos (Preventiva & Corretiva)",
+    badge: "MODALIDADE PRINCIPAL · B2B & CONDOMÍNIOS",
+    title: "Contratos de Manutenção Preventiva e Corretiva",
+    subtitle:
+      "Previsibilidade operacional, visitas técnicas programadas e socorro prioritário para quem não pode parar.",
+    description:
+      "Um motor queimado ou uma bomba parada sem aviso gera falta d'água em condomínios, paralisa obras e compromete operações hospitalares e comerciais. Com o Contrato de Manutenção BMF, sua operação conta com acompanhamento técnico contínuo, manutenção preventiva programada e atendimento corretivo imediato.",
+    image: "maintenance",
+    highlights: [
+      {
+        title: "Manutenção Preventiva Programada",
+        text: "Visitas periódicas para medição de isolação elétrica (megômetro), corrente, tensão, análise de ruído/vibração, troca programada de rolamentos e selos mecânicos e revisão de quadros de comando.",
+      },
+      {
+        title: "Manutenção Corretiva Prioritária",
+        text: "Em caso de falha ou parada súbita, clientes sob contrato possuem prioridade na visita técnica, retirada em campo, rebobinamento em bancada própria e reinstalação ágil.",
+      },
+      {
+        title: "Visita Técnica Diagnóstica",
+        text: "Antes de fechar o contrato ou iniciar um reparo complexo, vamos até o seu endereço em Brasília e entorno para levantar todos os motores, bombas e quadros instalados.",
+      },
+    ],
+    checklist: [
+      "Cronograma mensal ou quinzenal de inspeção preventiva in loco",
+      "Relatório técnico com diagnóstico de desgaste antes da quebra",
+      "Atendimento emergencial prioritário para bombas d'água e motores críticos",
+      "Coleta, transporte seguro e reinstalação pela equipe própria da BMF",
+      "Cobertura para motores elétricos, motobombas, poços artesianos, quadros e frotas de ferramentas",
+    ],
+    ctaText: "Solicitar visita técnica para contrato",
+    whatsappPrompt:
+      "Olá! Gostaria de agendar uma visita técnica e conhecer os Contratos de Manutenção Preventiva e Corretiva da BMF.",
+  },
+  {
+    id: "motores",
+    label: "Motores Elétricos",
+    badge: "OFICINA DE REBOBINAMENTO PRÓPRIA",
+    title: "Manutenção e Rebobinamento de Motores Elétricos",
+    subtitle:
+      "Recuperação eletromecânica completa de motores monofásicos e trifásicos de todos os portes.",
+    description:
+      "Executamos manutenção preventiva e corretiva em motores elétricos industriais, prediais e comerciais. Nossa oficina em Samambaia realiza desde o rebobinamento completo com fios de cobre de alta isolação térmica até a recuperação mecânica de eixos e tampas em torno próprio.",
+    image: "copper",
+    highlights: [
+      {
+        title: "Rebobinamento Técnico de Precisão",
+        text: "Substituição completa do bobinado com materiais isolantes classe F/H, impregnação em verniz e secagem controlada em estufa.",
+      },
+      {
+        title: "Revisão Mecânica e Usinagem",
+        text: "Troca de rolamentos de primeira linha, embuchamento de tampas, recuperação de pontas de eixo no torno e balanceamento.",
+      },
+      {
+        title: "Testes em Bancada antes da Entrega",
+        text: "Medição de resistência ôhmica, teste de isolação com megômetro e ensaio de corrente nominal para garantir confiabilidade total.",
+      },
+    ],
+    checklist: [
+      "Motores elétricos trifásicos e monofásicos (WEG e principais marcas)",
+      "Motores de bombas de recalque, compressores, exaustores e maquinário",
+      "Motores vibradores e equipamentos para construção civil",
+      "Manutenção preventiva com limpeza química, secagem e rejuvenescimento",
+      "Coleta e entrega programada em todo o Distrito Federal",
+    ],
+    ctaText: "Orçar manutenção de motor elétrico",
+    whatsappPrompt:
+      "Olá! Preciso de manutenção/rebobinamento para um motor elétrico e gostaria de falar com a oficina da BMF.",
+  },
+  {
+    id: "bombas",
+    label: "Motobombas & Poços",
+    badge: "SISTEMAS HIDRÁULICOS & POÇOS ARTESIANOS",
+    title: "Motobombas, Pressurização e Poços Artesianos",
+    subtitle:
+      "Visita técnica, retirada, conserto e instalação de bombas prediais, industriais e submersas.",
+    description:
+      "Atendemos condomínios, hospitais, shoppings, indústrias e residências em toda a linha de bombeamento de água. Realizamos a visita técnica na casa de bombas ou no poço artesiano, identificamos se a falha é hidráulica, mecânica ou elétrica e executamos a solução completa.",
+    image: "pump",
+    highlights: [
+      {
+        title: "Poços Artesianos (Retirada e Instalação)",
+        text: "Equipe técnica equipada para sacar bombas submersas de poços artesianos, realizar o laudo em oficina, consertar ou substituir e reinstalar com segurança.",
+      },
+      {
+        title: "Bombas de Recalque, Incêndio e Pressurização",
+        text: "Manutenção preventiva e corretiva em bombas centrífugas, multiestágio, submersíveis de esgoto/drenagem e sistemas pressurizadores.",
+      },
+      {
+        title: "Substituição de Selos, Rotores e Rolamentos",
+        text: "Eliminação de vazamentos, recuperação de perda de pressão/vazão e alinhamento completo do conjunto motobomba.",
+      },
+    ],
+    checklist: [
+      "Retirada e instalação de bombas submersas em poços artesianos",
+      "Manutenção preventiva em casas de bombas de condomínios e hospitais",
+      "Conserto de bombas centrífugas, autoaspirantes, submersíveis e injetoras",
+      "Troca de selo mecânico, gaxetas, rotores, difusores e rolamentos",
+      "Dimensionamento técnico para compra ou substituição de motobombas",
+    ],
+    ctaText: "Solicitar atendimento para bombas/poço",
+    whatsappPrompt:
+      "Olá! Preciso de atendimento técnico para bomba d'água / poço artesiano com a BMF.",
+  },
+  {
+    id: "ferramentas",
+    label: "Ferramentas Elétricas",
+    badge: "CONSTRUÇÃO CIVIL & INDÚSTRIA",
+    title: "Manutenção de Ferramentas Elétricas e Máquinas",
+    subtitle:
+      "Conserto ágil e contratos de manutenção para frotas de ferramentas de construtoras e oficinas.",
+    description:
+      "Ferramenta parada no canteiro de obras significa equipe ociosa e atraso no cronograma. A BMF realiza manutenção corretiva e preventiva em ferramentas elétricas pesadas, lavadoras industriais e equipamentos de construção civil, além de locação e venda de peças.",
+    image: "category-tools",
+    highlights: [
+      {
+        title: "Atendimento para Construtoras e Empreiteiras",
+        text: "Manutenção de lotes e frotas de ferramentas (DeWalt, Makita, Bosch e similares) com orçamento rápido e controle por equipamento.",
+      },
+      {
+        title: "Máquinas de Limpeza e Conservação",
+        text: "Conserto especializado de lavadoras de alta pressão profissionais/industriais e enceradeiras industriais para condomínios e empresas de facilities.",
+      },
+      {
+        title: "Equipamentos de Concretagem e Obra",
+        text: "Revisão e reparo de marteletes rompedores, serras circulares, lixadeiras, esmerilhadeiras e motores vibradores de concreto.",
+      },
+    ],
+    checklist: [
+      "Furadeiras de impacto, parafusadeiras, esmerilhadeiras e lixadeiras",
+      "Marteletes perfuradores e rompedores SDS-Plus / SDS-Max",
+      "Lavadoras de alta pressão e enceradeiras industriais",
+      "Serras circulares, serras mármore, policorte e motores vibradores",
+      "Troca de induzidos, estatores, escovas de carvão, engrenagens e cabos",
+    ],
+    ctaText: "Falar sobre manutenção de ferramentas",
+    whatsappPrompt:
+      "Olá! Preciso de manutenção para ferramentas elétricas / máquinas com a BMF.",
+  },
+  {
+    id: "quadros",
+    label: "Quadros, Torno & Visita Técnica",
+    badge: "AUTOMAÇÃO, USINAGEM & LOGÍSTICA DF",
+    title: "Quadros de Comando, Usinagem e Visita Técnica no DF",
+    subtitle:
+      "Engenharia completa: do painel elétrico que protege sua bomba até a usinagem e coleta no seu endereço.",
+    description:
+      "Muitas queimas de motores e bombas acontecem por falha no quadro elétrico ou falta de proteção térmica. A BMF projeta, monta e reforma quadros de comando, executa serviços próprios de torno e solda e realiza visitas técnicas e coletas em todo o DF.",
+    image: "category-motors",
+    highlights: [
+      {
+        title: "Quadros de Comando e Alternância",
+        text: "Montagem e reforma de painéis elétricos para alternância automática entre bomba principal e reserva, proteção contra falta de fase, sobrecarga e trabalho a seco.",
+      },
+      {
+        title: "Torno Mecânico e Solda na Própria Oficina",
+        text: "Recuperação de eixos gastos, confecção de buchas, embuchamento de mancais e solda técnica sem depender de terceiros — reduzindo o prazo de entrega.",
+      },
+      {
+        title: "Visita Técnica In Loco + Coleta e Entrega",
+        text: "Vamos até o seu local diagnosticar o problema, retiramos o equipamento com veículo próprio e devolvemos instalado e testado.",
+      },
+    ],
+    checklist: [
+      "Confecção e manutenção preventiva de quadros de comando elétrico",
+      "Instalação de contatores, relés térmicos, boias de nível e soft-starters",
+      "Serviços de torno mecânico e solda para recuperação de peças",
+      "Visita técnica diagnóstica em condomínios, empresas e obras no DF",
+      "Coleta e entrega programada pela frota própria da BMF",
+    ],
+    ctaText: "Agendar visita ou consultar coleta",
+    whatsappPrompt:
+      "Olá! Gostaria de agendar uma visita técnica / consultar manutenção de quadro de comando ou coleta com a BMF.",
   },
 ];
 
